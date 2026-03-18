@@ -250,8 +250,8 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -515,6 +515,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1160356261127867848, guid: 9d6cb0d583bacdc4ea03490350e1fa30, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a27c605b8e5ec24469d29ad5fca7af87, type: 2}
     - target: {fileID: 7878350319992209165, guid: 9d6cb0d583bacdc4ea03490350e1fa30, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.85
