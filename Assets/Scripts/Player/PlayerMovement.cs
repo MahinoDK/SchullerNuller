@@ -113,7 +113,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (direction == Vector2.down)
         {
-            heldItem.SetSortingOrder(2); // in front of player
+            heldItem.SetSortingOrder(2); // in front of player    the players sprite renderer is at sorting order 1, so we set the held item to 2 to be in front of the player and 0 behind the player
         }
         else
         {

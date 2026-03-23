@@ -7,7 +7,8 @@ public class PlayerInteraction : MonoBehaviour
     [Header("Hold Position")]
     [SerializeField] private Transform holdPosition;
 
-    private List<Grabbable> nearbyGrabbables = new List<Grabbable>();
+    private List<Grabbable> nearbyGrabbables = new List<Grabbable>(); //grabbale
+    private List<IInteractable> nearbyInteractables = new List<IInteractable>(); //interactable
     private Grabbable heldItem;
 
     public Grabbable GetHeldItem()
@@ -41,6 +42,15 @@ public class PlayerInteraction : MonoBehaviour
         heldItem = null; //clear the held item reference
     }
 
+    public void Interact(InputAction.CallbackContext context)
+    {
+        if (!context.performed) return;
+        if (nearbyInteractables.Count == 0) return;
+        //interact with the first nearby interactable, -> can expand this later to choose which one to interact with if there are multiple
+        nearbyInteractables[0].Interact(this);        //we send the player interaction script as a parameter, so the interactable can access the player's held item if needed, and other info about the player
+        //nearbyInteractables[0].SendMessage("OnInteract", SendMessageOptions.DontRequireReceiver);
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         Grabbable grabbable = other.GetComponent<Grabbable>();
@@ -48,6 +58,15 @@ public class PlayerInteraction : MonoBehaviour
         if (grabbable != null && !nearbyGrabbables.Contains(grabbable))
         {
             nearbyGrabbables.Add(grabbable);
+        }
+
+        MonoBehaviour[] behaviours = other.GetComponents<MonoBehaviour>();
+        foreach (MonoBehaviour behaviour in behaviours)
+        {
+            if (behaviour is IInteractable interactable && !nearbyInteractables.Contains(interactable))
+            {
+                nearbyInteractables.Add(interactable);
+            }
         }
     }
 
@@ -58,6 +77,15 @@ public class PlayerInteraction : MonoBehaviour
         if (grabbable != null && nearbyGrabbables.Contains(grabbable))
         {
             nearbyGrabbables.Remove(grabbable);
+        }
+
+        MonoBehaviour[] behaviours = other.GetComponents<MonoBehaviour>();
+        foreach (MonoBehaviour behaviour in behaviours)
+        {
+            if (behaviour is IInteractable interactable && nearbyInteractables.Contains(interactable))
+            {
+                nearbyInteractables.Remove(interactable);
+            }
         }
     }
 

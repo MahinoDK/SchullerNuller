@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class Grabbable : MonoBehaviour
 {
+    [Header("Item Info")]
+    public ItemType itemType = ItemType.None; //Public in inspector u can asign the SPECIFIC item to the desired object so each object all have this script but assigned different item type!!!!
+
+
+
     private Rigidbody2D rb;
     private Collider2D col;
     private SpriteRenderer spriteRenderer;
@@ -50,6 +55,11 @@ public class Grabbable : MonoBehaviour
         if (col != null)
         {
             col.enabled = true;
+        }
+
+        if (spriteRenderer != null)
+        {
+            SetSortingOrder(0); //reset sorting order when dropped, you can adjust this value as needed
         }
     }
     public void SetSortingOrder(int order)
