@@ -301,6 +301,7 @@ GameObject:
   - component: {fileID: 151527170}
   - component: {fileID: 151527169}
   - component: {fileID: 151527168}
+  - component: {fileID: 151527172}
   m_Layer: 0
   m_Name: Torch
   m_TagString: Untagged
@@ -441,6 +442,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &151527172
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151527167}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 7343833437362186825, guid: 73bb9950b1aaa124a84365f26ac59129, type: 3}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &184361692
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,7 +1283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 0a8ba527587c7724da92e6a8a96df5f4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 0a8ba527587c7724da92e6a8a96df5f4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1307,6 +1330,7 @@ GameObject:
   - component: {fileID: 1062157112}
   - component: {fileID: 1062157111}
   - component: {fileID: 1062157110}
+  - component: {fileID: 1062157114}
   m_Layer: 0
   m_Name: Torch (1)
   m_TagString: Untagged
@@ -1447,6 +1471,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1062157114
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1062157109}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 7343833437362186825, guid: 73bb9950b1aaa124a84365f26ac59129, type: 3}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1221631391
 GameObject:
   m_ObjectHideFlags: 0
@@ -1593,7 +1639,7 @@ Transform:
   m_GameObject: {fileID: 1221631391}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.33, y: 1.59, z: 0.24}
+  m_LocalPosition: {x: -2.33, y: 1.94, z: 0.24}
   m_LocalScale: {x: 1.2225, y: 1.6061, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1611,6 +1657,7 @@ GameObject:
   - component: {fileID: 1332855256}
   - component: {fileID: 1332855255}
   - component: {fileID: 1332855254}
+  - component: {fileID: 1332855258}
   m_Layer: 0
   m_Name: Torch (2)
   m_TagString: Untagged
@@ -1751,6 +1798,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1332855258
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332855253}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 7343833437362186825, guid: 73bb9950b1aaa124a84365f26ac59129, type: 3}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1412936600
 GameObject:
   m_ObjectHideFlags: 0
@@ -1807,6 +1876,7 @@ GameObject:
   - component: {fileID: 1626002291}
   - component: {fileID: 1626002290}
   - component: {fileID: 1626002289}
+  - component: {fileID: 1626002293}
   m_Layer: 0
   m_Name: Torch (4)
   m_TagString: Untagged
@@ -1947,6 +2017,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1626002293
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626002288}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 7343833437362186825, guid: 73bb9950b1aaa124a84365f26ac59129, type: 3}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1712120355
 GameObject:
   m_ObjectHideFlags: 0
@@ -1960,6 +2052,7 @@ GameObject:
   - component: {fileID: 1712120358}
   - component: {fileID: 1712120357}
   - component: {fileID: 1712120356}
+  - component: {fileID: 1712120361}
   m_Layer: 0
   m_Name: Lighter
   m_TagString: Untagged
@@ -2117,6 +2210,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1712120361
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712120355}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 8263801152452690727, guid: 4557c5a8557d4684e954a373eb3fdc65, type: 3}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1952823797
 GameObject:
   m_ObjectHideFlags: 0
@@ -2129,6 +2244,7 @@ GameObject:
   - component: {fileID: 1952823800}
   - component: {fileID: 1952823799}
   - component: {fileID: 1952823798}
+  - component: {fileID: 1952823802}
   m_Layer: 0
   m_Name: Torch (3)
   m_TagString: Untagged
@@ -2269,6 +2385,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1952823802
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952823797}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 7343833437362186825, guid: 73bb9950b1aaa124a84365f26ac59129, type: 3}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
