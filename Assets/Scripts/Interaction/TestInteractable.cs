@@ -2,50 +2,44 @@ using UnityEngine;
 
 public class TestInteractable : MonoBehaviour, IInteractable
 {
-    [Header("Required Item")]
-    [SerializeField] private ItemType requiredItem = ItemType.None; //The item required to interact with this object, set in inspector
+    [Header("Interactable Info")]
+    public InteractableType interactableType = InteractableType.None;
 
-    [Header("Color Change")]
-    [SerializeField] private Color changedColor = Color.green; //The color to change to when interacted with the required item testItem
+    public bool HasBeenActivated { get; private set; } = false;
 
     private SpriteRenderer spriteRenderer;
-    private bool hasChanged = false; //To prevent multiple interactions changing the color multiple times
 
-    public void Awake()
+    private Animator animator;
+
+    private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
+
     public void Interact(PlayerInteraction player)
     {
-        Grabbable heldItem = player.GetHeldItem();
+        PuzzleManager.Instance.HandleInteraction(player, this);
+    }
 
-        //if this object needs no item
-        if(requiredItem == ItemType.None)
+    public void SetLit()
+    {
+        if (animator != null)
         {
-            Debug.Log("You press the item to the block! ...But nothing happenes.");
-            return;
+            animator.SetBool("isLit", true);
         }
+    }
 
-        //if player not holding anything
-        if(heldItem == null)
+    public void ChangeColor(Color newColor)
+    {
+        if (spriteRenderer != null)
         {
-            Debug.Log("You press your hands to the block! ...But nothing happenes.");
-            return;
+            spriteRenderer.color = newColor;
         }
+    }
 
-        //if player holding the required item and the color hasn't changed yet
-        if(heldItem.itemType == requiredItem)
-        {
-            if(!hasChanged && spriteRenderer != null)
-            {
-                spriteRenderer.color = changedColor;
-                hasChanged = true;
-            }
-            Debug.Log("You press the item to the block... It Changed color!");
-        }
-        else
-        {
-        Debug.Log("You press the item to the block... But nothing happenes.");
-        }
+    public void MarkActivated()
+    {
+        HasBeenActivated = true;
     }
 }

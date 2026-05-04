@@ -11,12 +11,14 @@ public class Grabbable : MonoBehaviour
     private Collider2D col;
     private SpriteRenderer spriteRenderer;
 
+    private Animator animator;
 
     public void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
+            animator = GetComponent<Animator>();
     }
 
     public void Grab(Transform holdPosition)
@@ -38,6 +40,16 @@ public class Grabbable : MonoBehaviour
              transform.SetParent(holdPosition);
              transform.localPosition = Vector3.zero;
        }
+
+    public void UseHeldItemAnimation()
+    {
+        if (animator == null) return;
+
+        if (itemType == ItemType.Lighter)
+        {
+            animator.SetTrigger("Use");
+        }
+    }
 
     public void Drop(Vector3 dropPosition)
     {
