@@ -7,6 +7,7 @@ public class PlayerBehavior : MonoBehaviour
 
     private Rigidbody2D rb;
     private Animator animator;
+    private Vector2 moveInput;
 
     void Start()
     {
