@@ -244,19 +244,7 @@ MonoBehaviour:
     m_ActionId: 99b19112-13db-45f9-99a1-4d6ccf21c67f
     m_ActionName: 'Player/Change[/Keyboard/x]'
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 517134248611938271}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: Move
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 6e107ddf-12c9-4b2c-b305-237c6232fb88
     m_ActionName: 'PlayerA/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
   - m_PersistentCalls:
@@ -275,6 +263,74 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ac1e8008-d501-491d-a9fa-f25fb08b1690
     m_ActionName: 'PlayerB/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9d710b1f-ba86-4cde-b62d-b700f3d3fb60
+    m_ActionName: 'VampireC/Interact[/Keyboard/e]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8447283445342916154}
+        m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 52449b93-a082-4036-9ae1-d81e29a865ff
+    m_ActionName: 'NurseC/Interact[/Keyboard/numpad0]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4f14481a-70c5-4977-a627-978a9517ca46
+    m_ActionName: 'VampireC/Grab[/Keyboard/e]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ef657cd8-e392-46dd-86e5-cdf2a7d6e082
+    m_ActionName: 'VampireC/Drop[/Keyboard/g]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8447283445342916154}
+        m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
+        m_MethodName: Grab
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 70116184-a30d-4fc6-9a5c-6098d4665934
+    m_ActionName: 'NurseC/Grab[/Keyboard/ctrl]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8447283445342916154}
+        m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
+        m_MethodName: Drop
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a4f3b542-1d5a-43aa-bec2-81951ea1d591
+    m_ActionName: 'NurseC/Drop[/Keyboard/shift]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5870a448-9813-48ed-a546-c1851a8b0715
+    m_ActionName: 'UI/Pause[/Keyboard/escape]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5b133310-2343-47a7-bec6-2870ddb226b1
+    m_ActionName: 'VampireC/Pause[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -322,6 +378,7 @@ MonoBehaviour:
   moveSpeed: 5
   holdPosition: {fileID: 5119744058266495197}
   holdDistance: 0.4
+  gameManager: {fileID: 0}
 --- !u!58 &8235608806658316123
 CircleCollider2D:
   m_ObjectHideFlags: 0

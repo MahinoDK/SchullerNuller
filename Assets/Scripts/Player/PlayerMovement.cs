@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 lastFacingDirection = Vector2.down; //the last direction the player was facing, default is down
 
+    public GameManager gameManager;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>(); //get component of rb attached to this = the player
@@ -29,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+       
         rb.linearVelocity = moveInput * moveSpeed; //velocity of the player is the input multiplied by the speed
 
         UpdateHoldPosition(); //Call update the position of the hold position
@@ -36,6 +38,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context) //we find input actions on player, and Move is the name for the input action, and we get the context of the input action, which is the value of the input action
     {
+
+        if (Manager.Instance.isGamePaused)
+        {
+            return;
+        }
         moveInput = context.ReadValue<Vector2>(); //we read the value of the input action, which is a vector2, and we store it in moveInput, not relevant for animation but for the holdPosition direction of item held
 
         animator.SetBool("isWalking", moveInput != Vector2.zero);
@@ -119,5 +126,16 @@ public class PlayerMovement : MonoBehaviour
         {
             heldItem.SetSortingOrder(0); // behind player
         }
+    }
+
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        if (!context.started)
+            return;
+        if (Manager.Instance.isGamePaused)
+        {
+            Manager.Instance.ResumeGame();
+        }
+        else { Manager.Instance.PauseGame(); }
     }
 }
