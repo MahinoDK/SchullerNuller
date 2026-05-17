@@ -9,6 +9,10 @@ public class PlayerSpawner : MonoBehaviour
     public GameObject Nurse;
     public Transform spawnPointVampire;
     public Transform spawnPointNurse;
+
+    public CameraManager cameraManager;
+
+    public RoomScript startingRoom;
     void Start()
     {
         var p1 = PlayerInput.Instantiate(Vampire);
@@ -21,7 +25,15 @@ public class PlayerSpawner : MonoBehaviour
         p2.transform.position = spawnPointNurse.position;
         p2.transform.rotation = spawnPointNurse.rotation;
 
+        cameraManager.player1 = p1.GetComponent<PlayerMovement>();
 
+        cameraManager.player2 = p2.GetComponent<PlayerMovement>(); 
+
+        
+        cameraManager.player1.currentRoom = startingRoom;
+        cameraManager.player2.currentRoom = startingRoom;
+
+        cameraManager.ActivateRoom(startingRoom);
         // Create separate action instances
         p1.actions = Instantiate(inputActions);
         p2.actions = Instantiate(inputActions);

@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 lastFacingDirection = Vector2.down; //the last direction the player was facing, default is down
 
     public GameManager gameManager;
+
+    public RoomScript currentRoom;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>(); //get component of rb attached to this = the player
