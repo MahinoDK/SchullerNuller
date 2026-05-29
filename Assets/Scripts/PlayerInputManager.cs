@@ -7,7 +7,7 @@ public class PlayerInputManager : MonoBehaviour
     [SerializeField] private GameObject vamp;
     [SerializeField] private Transform[] spawnpoint;
 
-    private bool hasJoined = false;
+  
     // Start is called once before the first execution of Update after the MonoBehaviour is created
    
 
