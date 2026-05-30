@@ -2,19 +2,29 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-
+    public static CameraManager Instance;
     public PlayerMovement player1;
     public PlayerMovement player2;
 
     public RoomScript[] rooms;
 
     private RoomScript currentActiveRoom;
-    private bool isSplitScreenActive = false;
 
+    public bool isSplitScreenActive = false;
+
+    public bool IsSplitScreenActive()
+    {
+        return player1.currentRoom != player2.currentRoom;
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
        
+    }
+
+    private void Awake()
+    {
+        Instance = this;
     }
 
     // Update is called once per frame
@@ -49,6 +59,8 @@ public class CameraManager : MonoBehaviour
 
         room.staticCamera.gameObject.SetActive(true);
 
+        DialogueManager.Instance.RefreshDialogueUI(1);
+        DialogueManager.Instance.RefreshDialogueUI(2);
         currentActiveRoom = room;
         isSplitScreenActive = false;
     }
@@ -74,6 +86,9 @@ public class CameraManager : MonoBehaviour
 
         p1Room.followCamera.gameObject.SetActive(true);
         p2Room.followCamera.gameObject.SetActive(true);
+        
+        DialogueManager.Instance.RefreshDialogueUI(1);
+        DialogueManager.Instance.RefreshDialogueUI(2);
 
         isSplitScreenActive = true;
     }

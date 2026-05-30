@@ -13,7 +13,7 @@ public class RoomScript : MonoBehaviour
 
     private void Start()
     {
-            Debug.Log($"{name}: {playersInRoom.Count}");
+            
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -50,7 +50,7 @@ public class RoomScript : MonoBehaviour
         {
             followScript.target = null;
         }
-        Debug.Log($"Target assigned: {playersInRoom[0].name}");
+        
     }
 
     public void RegisterPlayer(PlayerMovement player)

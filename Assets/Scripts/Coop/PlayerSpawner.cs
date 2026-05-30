@@ -36,7 +36,8 @@ public class PlayerSpawner : MonoBehaviour
         startingRoom.RegisterPlayer(cameraManager.player1);
         startingRoom.RegisterPlayer(cameraManager.player2);
 
-        
+        cameraManager.player1.playerID = 1;
+        cameraManager.player2.playerID = 2;
 
         cameraManager.ActivateRoom(startingRoom);
         // Create separate action instances

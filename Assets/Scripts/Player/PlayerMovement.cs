@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     public GameManager gameManager;
 
     public RoomScript currentRoom;
+
+    public int playerID; //1 or 2, set in inspector, used for dialogue manager to know which dialogue to show for which player
     void Start()
     {
         rb = GetComponent<Rigidbody2D>(); //get component of rb attached to this = the player
@@ -32,7 +34,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-       
+        if (DialogueManager.Instance.IsDialogueOpen(playerID))
+        {
+            moveInput = Vector2.zero;
+            rb.linearVelocity = Vector2.zero;
+            animator.SetBool("isWalking", false);
+            return;
+        }
+
         rb.linearVelocity = moveInput * moveSpeed; //velocity of the player is the input multiplied by the speed
 
         UpdateHoldPosition(); //Call update the position of the hold position
