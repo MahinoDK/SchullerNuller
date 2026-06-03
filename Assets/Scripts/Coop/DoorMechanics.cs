@@ -10,24 +10,9 @@ public class DoorMechanics : MonoBehaviour
     {
        
         PlayerMovement player = collision.GetComponentInParent<PlayerMovement>();
-        if (player == null) 
-            return;
+        if (player == null) return;
 
-       
-
-        player.transform.position = (Vector2)linkedDoor.transform.position + linkedDoor.exitOffset;
-
-       
-    }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
+        player.transform.position = (Vector2)linkedDoor.transform.position + linkedDoor.exitOffset; 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

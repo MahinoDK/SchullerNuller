@@ -79,10 +79,10 @@ public class CameraManager : MonoBehaviour
         RoomScript p2Room = player2.currentRoom;
 
         p1Room.followCamera.rect =
-            new Rect(0.1f, 0.5f, 0.8f, 0.5f);
+            new Rect(0f, 0.5f, 1, 0.5f);
 
         p2Room.followCamera.rect =
-            new Rect(0.1f, 0f, 0.8f, 0.5f);
+            new Rect(0f, 0f, 1, 0.5f);
 
         p1Room.followCamera.gameObject.SetActive(true);
         p2Room.followCamera.gameObject.SetActive(true);
