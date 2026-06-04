@@ -54,14 +54,17 @@ TagManager:
   - name: Colission
     uniqueID: 179525677
     locked: 0
+  - name: DecorOnCollision
+    uniqueID: 162560823
+    locked: 0
+  - name: Decor
+    uniqueID: 3897795951
+    locked: 0
   - name: Player
     uniqueID: 2434814535
     locked: 0
   - name: WalkBehind
     uniqueID: 3468877543
-    locked: 0
-  - name: Decor
-    uniqueID: 3897795951
     locked: 0
   - name: DecorOnDecor
     uniqueID: 744748037

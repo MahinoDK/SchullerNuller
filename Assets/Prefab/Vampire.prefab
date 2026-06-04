@@ -276,7 +276,7 @@ PrefabInstance:
       objectReference: {fileID: -3564260780054560588, guid: 1cb8a5b37a8435143a870320366d9844, type: 3}
     - target: {fileID: 3626916397498700004, guid: 9d6cb0d583bacdc4ea03490350e1fa30, type: 3}
       propertyPath: m_SortingLayer
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 9d6cb0d583bacdc4ea03490350e1fa30, type: 3}
       propertyPath: m_SortingOrder
@@ -723,17 +723,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.03391862, y: 0.55969334}
+  m_Offset: {x: 0.03391862, y: 0.12366}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: -0.16666667}
+    pivot: {x: 0.49999994, y: -0.00045952972}
     oldSize: {x: 1.125, y: 1.6875}
     newSize: {x: 1.6875, y: 1.875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.9554076, y: 0.55688715}
+  m_Size: {x: 0.9554076, y: 0.25991303}
   m_EdgeRadius: 0
 --- !u!4 &2067399581256630435 stripped
 Transform:
