@@ -1,18 +1,23 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    public InteractableType interactableType;
     public static DialogueManager Instance;
     [Header("Player 1")]
     public GameObject Player1Panel;
     public TMP_Text Player1Text;
     public GameObject SharedPlayer1Panel;
     public TMP_Text SharedPlayer1Text;
-
+    public Image Item1;
+    public Image Item1F; //SplitScreenItem
     [Header("Player 2")]
     public GameObject Player2Panel;
     public TMP_Text Player2Text;
+    public Image Item2;
+
 
     private string[] player1Pages;
     private int player1Page;
@@ -22,6 +27,8 @@ public class DialogueManager : MonoBehaviour
 
     private bool player1DialogueOpen;
     private bool player2DialogueOpen;
+
+    
 
     public bool IsDialogueOpen(int playerID)
     {
@@ -49,8 +56,7 @@ public class DialogueManager : MonoBehaviour
         {
             Player1Panel.SetActive(true);
             Player1Text.text = Text;
-
-
+            
         }
         else
         {
