@@ -30,6 +30,7 @@ public class PlayerInteraction : MonoBehaviour
 
         //pick the first nearby item and grab it
         heldItem = nearbyGrabbables[0];
+        Debug.Log(gameObject.name + " grabbed: " + heldItem.itemType);
         heldItem.Grab(holdPosition);
     }
 
@@ -46,13 +47,19 @@ public class PlayerInteraction : MonoBehaviour
 
     public void Interact(InputAction.CallbackContext context)
     {
+        Debug.Log(gameObject.name + " interacting. Held item: " + (heldItem != null ? heldItem.itemType.ToString() : "NONE"));
         Debug.Log("Interact button pressed");
         if (!context.performed) return;
 
         int playerID = GetComponent<PlayerMovement>().playerID; //get the player ID from the player movement script, to know which dialogue to show for which player
         if (heldItem != null) //if holding an item we can trigger animation to!
         {
+            Debug.Log("Held item is: " + heldItem.itemType);
             heldItem.UseHeldItemAnimation();
+        }
+        else
+        {
+            Debug.Log("No held item");
         }
 
         if (DialogueManager.Instance.IsDialogueOpen(playerID))
@@ -74,14 +81,17 @@ public class PlayerInteraction : MonoBehaviour
 
         if (grabbable != null && !nearbyGrabbables.Contains(grabbable))
         {
-            interactPrompt.SetActive(true); //show the interact prompt when entering the trigger of a grabbable item
+            if (interactPrompt != null)
+            {
+                interactPrompt.SetActive(true); //show the interact prompt when entering the trigger of a grabbable item
+            }
             nearbyGrabbables.Add(grabbable);
         }
 
         MonoBehaviour[] behaviours = other.GetComponents<MonoBehaviour>();
         foreach (MonoBehaviour behaviour in behaviours)
         {
-            if (behaviour is IInteractable interactable && !nearbyInteractables.Contains(interactable))
+            if (behaviour is IInteractable interactable && !nearbyInteractables.Contains(interactable) && interactPrompt != null)
             {
                 interactPrompt.SetActive(true); //show the interact prompt when entering the trigger of an interactable item
                 nearbyInteractables.Add(interactable);
@@ -93,7 +103,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         Grabbable grabbable = other.GetComponent<Grabbable>();
 
-        if (grabbable != null && nearbyGrabbables.Contains(grabbable))
+        if (grabbable != null && nearbyGrabbables.Contains(grabbable) && interactPrompt != null)
         {
             nearbyGrabbables.Remove(grabbable);
             interactPrompt.SetActive(false); //hide the interact prompt when exiting the trigger of a grabbable item
@@ -102,7 +112,7 @@ public class PlayerInteraction : MonoBehaviour
         MonoBehaviour[] behaviours = other.GetComponents<MonoBehaviour>();
         foreach (MonoBehaviour behaviour in behaviours)
         {
-            if (behaviour is IInteractable interactable && nearbyInteractables.Contains(interactable))
+            if (behaviour is IInteractable interactable && nearbyInteractables.Contains(interactable) && interactPrompt != null)
             {
                 nearbyInteractables.Remove(interactable);
                 interactPrompt.SetActive(false); //hide the interact prompt when exiting the trigger of an interactable item

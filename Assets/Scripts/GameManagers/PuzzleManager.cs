@@ -6,7 +6,8 @@ public class PuzzleManager : MonoBehaviour
 
     private int litTorches = 0;
     private int totalTorchesNeeded = 5;
-
+    [SerializeField] private SpriteRenderer pentagramRenderer;
+    [SerializeField] private Sprite revealedSprite;
     private void Awake()
     {
         Instance = this;
@@ -44,24 +45,9 @@ public class PuzzleManager : MonoBehaviour
 
             if (litTorches >= totalTorchesNeeded)
             {
-                Debug.Log("All torches are lit. The pentagram reveals a code.");
+                Debug.Log("All torches are lit. The pentagram is active");
+                pentagramRenderer.sprite = revealedSprite;
             }
-
-            return;
-        }
-
-        // BLOOD VIAL + ALTAR
-        if (heldItemType == ItemType.BloodVial && targetType == InteractableType.Altar)
-        {
-            if (interactable.HasBeenActivated)
-            {
-                Debug.Log("The altar has already been used.");
-                return;
-            }
-
-            Debug.Log("You place the blood vial on the altar. You escaped!");
-            interactable.ChangeColor(Color.red);
-            interactable.MarkActivated();
 
             return;
         }
