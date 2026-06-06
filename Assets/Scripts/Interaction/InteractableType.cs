@@ -6,5 +6,8 @@ public enum InteractableType
     Chest,
     Altar,
     Mirror,
-    Pentagram
+    Pentagram,
+    BookShelf,
+    Brunhilde,
+    TableCandle
 } 

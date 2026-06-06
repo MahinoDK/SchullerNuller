@@ -1184,7 +1184,7 @@
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard&Mouse",
                     "action": "Grab",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -1195,7 +1195,7 @@
                     "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard&Mouse",
                     "action": "Drop",
                     "isComposite": false,
                     "isPartOfComposite": false

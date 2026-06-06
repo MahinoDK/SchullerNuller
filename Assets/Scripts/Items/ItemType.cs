@@ -6,5 +6,6 @@ public enum ItemType
     Lighter,
     BloodVial,
     Garlic,
-    TestItem
+    TestItem,
+    SpellBook
 }

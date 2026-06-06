@@ -12,6 +12,7 @@ public class Grabbable : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     private Animator animator;
+    public bool canBeGrabbed = true; //flag to control if the item can be grabbed, default to true but can be set to false for items that start as ungrabbable (like the spellbook)
 
     public void Awake()
     {
