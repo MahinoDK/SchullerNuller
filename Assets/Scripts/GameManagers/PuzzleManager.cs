@@ -20,6 +20,10 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField] private TestInteractable candle1;
     [SerializeField] private TestInteractable candle2;
 
+    private TestInteractable activeMirror;
+
+    public GameObject minigameVisual;
+
     [SerializeField]
     private Grabbable tableBook;
 
@@ -38,6 +42,7 @@ public class PuzzleManager : MonoBehaviour
         Instance = this;
         candle1Object.SetActive(false);
         candle2Object.SetActive(false);
+        minigameVisual.SetActive(false);
 
     }
 
@@ -100,8 +105,7 @@ public class PuzzleManager : MonoBehaviour
             {
                Debug.Log("The book now Opens"); // �NDRE SPRITE HER MATHILDE MANGE TAK!
 
-               bookUnlocked = true;
-               tableBook.canBeGrabbed = true;
+              
                 MirrorPuzzleComplete();
             }
                 return;
@@ -118,17 +122,33 @@ public class PuzzleManager : MonoBehaviour
 
             if (playerID != 2)
             {
+                string[] vampireMirrorText =
+                {
+                    "The Mirror Remains Empty",
+                    "No Reflection Stares Back At You",
+            
+                };
+
+            DialogueManager.Instance.StartDialogue(playerID, vampireMirrorText);
                 return;
             }
 
             if (!mirrorActive)
             {
+                activeMirror = interactable;
+                interactable.MirrorGameOn();
                 StartMirrorPuzzle();
                 candle1Object.SetActive(true);
                 candle2Object.SetActive(true);
+                
 
             }
-            return;
+            else
+            {
+                Debug.Log(MirrorGame.Instance);
+                MirrorGame.Instance.CheckHit();
+            }
+                return;
         }
 
         // NOTHING USEFUL
@@ -139,12 +159,18 @@ public class PuzzleManager : MonoBehaviour
     {
         mirrorActive = true;
         Debug.Log("The mirror puzzle is now active. Player 2 can interact with the mirror.");
-        
+        minigameVisual.SetActive(true);
+       
     }
     public void MirrorPuzzleComplete()
     {
         mirrorActive = false;
         Debug.Log("The mirror puzzle is now disabled");
+        minigameVisual.SetActive(false);
+        bookUnlocked = true;
+        tableBook.canBeGrabbed = true;
+        candle1Object.GetComponent<Collider2D>().enabled = false;
+        candle2Object.GetComponent<Collider2D>().enabled = false;
     }
     public void MirrorPuzzleLost()
     {
@@ -152,10 +178,20 @@ public class PuzzleManager : MonoBehaviour
         Debug.Log("The mirror puzzle is now disabled. You failed to solve it in time.");
         candle1.MarkUnActivated();
         candle2.MarkUnActivated();
+        candle1.SetUnlit();
+        candle2.SetUnlit();
+
         candle1Object.SetActive(false);
         candle2Object.SetActive(false);
+        minigameVisual.SetActive(false);
 
 
         litTableCandles = 0;
+
+        mirrorActive = false;
+        if(activeMirror != null)
+        {
+            activeMirror.MirrorGameOff();
+        }
     }
 }

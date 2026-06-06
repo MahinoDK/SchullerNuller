@@ -21,7 +21,7 @@ public class PlayerInteraction : MonoBehaviour
 
     public void Grab(InputAction.CallbackContext context)
     {
-        Debug.Log("grabbing");
+        
 
         if (!context.performed) return;
 
@@ -40,7 +40,7 @@ public class PlayerInteraction : MonoBehaviour
         }
 
         heldItem = item;
-        Debug.Log(item);
+        
         heldItem.Grab(holdPosition);
     }
 
