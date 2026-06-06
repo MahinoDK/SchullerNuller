@@ -12,8 +12,8 @@ public class PlayerInteraction : MonoBehaviour
     private Grabbable heldItem;
 
   
-    [SerializeField]
-    private GameObject interactPrompt; //reference to the interact prompt UI element
+    
+    
     public Grabbable GetHeldItem()
     {
                return heldItem;
@@ -21,7 +21,7 @@ public class PlayerInteraction : MonoBehaviour
 
     public void Grab(InputAction.CallbackContext context)
     {
-        
+        Debug.Log("grabbing");
 
         if (!context.performed) return;
 
@@ -40,6 +40,7 @@ public class PlayerInteraction : MonoBehaviour
         }
 
         heldItem = item;
+        Debug.Log(item);
         heldItem.Grab(holdPosition);
     }
 
@@ -97,7 +98,7 @@ public class PlayerInteraction : MonoBehaviour
         MonoBehaviour[] behaviours = other.GetComponents<MonoBehaviour>();
         foreach (MonoBehaviour behaviour in behaviours)
         {
-            if (behaviour is IInteractable interactable && !nearbyInteractables.Contains(interactable) && interactPrompt != null)
+            if (behaviour is IInteractable interactable && !nearbyInteractables.Contains(interactable))
             {
                   
                 nearbyInteractables.Add(interactable);
@@ -109,7 +110,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         Grabbable grabbable = other.GetComponent<Grabbable>();
 
-        if (grabbable != null && nearbyGrabbables.Contains(grabbable) && interactPrompt != null)
+        if (grabbable != null && nearbyGrabbables.Contains(grabbable))
         {
             nearbyGrabbables.Remove(grabbable);
             
@@ -118,7 +119,7 @@ public class PlayerInteraction : MonoBehaviour
         MonoBehaviour[] behaviours = other.GetComponents<MonoBehaviour>();
         foreach (MonoBehaviour behaviour in behaviours)
         {
-            if (behaviour is IInteractable interactable && nearbyInteractables.Contains(interactable) && interactPrompt != null)
+            if (behaviour is IInteractable interactable && nearbyInteractables.Contains(interactable))
             {
                 nearbyInteractables.Remove(interactable);
                 
