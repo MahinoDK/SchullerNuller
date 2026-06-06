@@ -7,5 +7,7 @@ public enum InteractableType
     Altar,
     Mirror,
     Pentagram,
-    Book
+    BookShelf,
+    Brunhilde,
+    TableCandle
 } 

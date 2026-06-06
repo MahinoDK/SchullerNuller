@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    public InteractableType interactableType;
+    private InteractableType interactableType;
     public static DialogueManager Instance;
     [Header("Player 1")]
     public GameObject Player1Panel;
@@ -62,6 +62,7 @@ public class DialogueManager : MonoBehaviour
         {
             Player2Panel.SetActive(true);
             Player2Text.text = Text;
+          
         }
     }
 
@@ -71,11 +72,13 @@ public class DialogueManager : MonoBehaviour
         {
             Player1Panel.SetActive(false);
             SharedPlayer1Panel.SetActive(false);
-
+            Item1.gameObject.SetActive(false);
         }
         else
         {
             Player2Panel.SetActive(false);
+            Item2.gameObject.SetActive(false);
+
         }
 
     }
@@ -87,12 +90,21 @@ public class DialogueManager : MonoBehaviour
             player1Pages = pages;
             player1Page = 0;
             player1DialogueOpen = true;
+            if (interactableType == InteractableType.BookShelf)
+            {
+                Debug.Log("Activating Item1 for Player 1");
+                Item1.gameObject.SetActive(true);
+            }
         }
         else
         {
             player2Pages = pages;
             player2Page = 0;
             player2DialogueOpen = true;
+            if (interactableType == InteractableType.BookShelf)
+            {
+                Item2.gameObject.SetActive(true);
+            }
         }
 
         ShowCurrentPage(playerID);
@@ -107,11 +119,21 @@ public class DialogueManager : MonoBehaviour
             {
                 Player1Panel.SetActive(true);
                 Player1Text.text = pageText;
+
+                if (interactableType == InteractableType.BookShelf)
+                {
+                    Item1F.gameObject.SetActive(true);
+                }
             }
             else
             {
                 SharedPlayer1Panel.SetActive(true);
                 SharedPlayer1Text.text = pageText;
+
+                if (interactableType == InteractableType.BookShelf)
+                {
+                    Item1.gameObject.SetActive(true);
+                }
             }
         }
         else
@@ -120,6 +142,10 @@ public class DialogueManager : MonoBehaviour
 
             Player2Panel.SetActive(true);
             Player2Text.text = pageText;
+            if (interactableType == InteractableType.BookShelf)
+            {
+                Item2.gameObject.SetActive(true);
+            }
         }
     }
 
@@ -160,5 +186,10 @@ public class DialogueManager : MonoBehaviour
         HideDialogue(playerID);
 
         ShowCurrentPage(playerID);
+    }
+    public void SetInteractableType(InteractableType type)
+    {
+        interactableType = type;
+        Debug.Log("Interactable type set to: " + interactableType);
     }
 }

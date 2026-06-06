@@ -30,6 +30,14 @@ public class TestInteractable : MonoBehaviour, IInteractable
         }
     }
 
+    public void SetUnlit()
+    {
+        if (animator != null)
+        {
+            animator.SetBool("isLit", false);
+        }
+    }
+
     public void ChangeColor(Color newColor)
     {
         if (spriteRenderer != null)
@@ -41,5 +49,15 @@ public class TestInteractable : MonoBehaviour, IInteractable
     public void MarkActivated()
     {
         HasBeenActivated = true;
+    }
+
+    public void MarkUnActivated() 
+    {
+        HasBeenActivated = false;
+
+        if(animator != null)
+        {
+            animator.SetBool("isLit", false);
+        }
     }
 }
