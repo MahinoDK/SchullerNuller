@@ -43,13 +43,27 @@ public class Grabbable : MonoBehaviour
        }
 
 
-    public void UseHeldItemAnimation()
+    public void UseHeldItemAnimation(PlayerInteraction player)
     {
         if (animator == null) return;
+
+        PlayerMovement playerMovement = player.GetComponent<PlayerMovement>();
 
         if (itemType == ItemType.Lighter)
         {
             animator.SetTrigger("Use");
+        }
+
+        if (itemType == ItemType.angelScroll)
+        {
+            if (playerMovement.playerID == 2) // nurse ID
+            {
+                animator.SetTrigger("Use");
+            }
+            else
+            {
+                Debug.Log("Only the nurse can use this.");
+            }
         }
     }
 

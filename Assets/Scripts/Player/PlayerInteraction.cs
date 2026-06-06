@@ -25,7 +25,7 @@ public class PlayerInteraction : MonoBehaviour
 
         if (!context.performed) return;
 
-        //already holding something, do nothing (her kan man senere tilf�je en cute animation eller text der siger man ik kan holde mere end en, eller s�dan en grr lyd
+        //already holding something, do nothing (her kan man senere tilf�je en cute animat ion eller text der siger man ik kan holde mere end en, eller s�dan en grr lyd
         if (heldItem != null) return;
 
         //no item nearby? DO NOTHING
@@ -65,7 +65,7 @@ public class PlayerInteraction : MonoBehaviour
         if (heldItem != null) //if holding an item we can trigger animation to!
         {
             Debug.Log("Held item is: " + heldItem.itemType);
-            heldItem.UseHeldItemAnimation();
+            heldItem.UseHeldItemAnimation(this);
         }
         else
         {

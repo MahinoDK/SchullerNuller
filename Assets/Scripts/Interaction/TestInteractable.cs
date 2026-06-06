@@ -60,4 +60,14 @@ public class TestInteractable : MonoBehaviour, IInteractable
             animator.SetBool("isLit", false);
         }
     }
+
+    public void TriggerAnimation(string triggerName)
+    {
+        Animator animator = GetComponent<Animator>();
+
+        if (animator != null)
+        {
+            animator.SetTrigger(triggerName);
+        }
+    }
 }
