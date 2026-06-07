@@ -18,11 +18,11 @@ public class TableBookInteraction : MonoBehaviour, IInteractable
 
         if (!PuzzleManager.Instance.IsBookUnlocked())
         {
-            DialogueManager.Instance.StartDialogue(playerID, lockedPages);
+            DialogueManager.Instance.StartDialogue(playerID, lockedPages, InteractableType.SpellBook);
             return;
         }
 
-        DialogueManager.Instance.StartDialogue(playerID, unlockedPages);
+        DialogueManager.Instance.StartDialogue(playerID, unlockedPages, InteractableType.SpellBook);
     }
 
 }

@@ -11,5 +11,6 @@ public enum InteractableType
     Brunhilde,
     TableCandle,
     RoseBush,
-    Grave
+    Grave,
+    SpellBook
 } 

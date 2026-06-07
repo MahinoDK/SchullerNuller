@@ -182,8 +182,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
-  m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -740,8 +740,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bbc66540a72ba04a94c27fc1e35a3e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleManager
+  SpellBookRenderer: {fileID: 0}
+  SpellBookOpenedSprite: {fileID: 0}
   pentagramRenderer: {fileID: 0}
   revealedSprite: {fileID: 0}
+  statueRenderer: {fileID: 0}
+  activatedStatueSprite: {fileID: 0}
+  angelScrollPrefab: {fileID: 0}
+  angelScrollSpawnPoint: {fileID: 0}
+  rosePrefab: {fileID: 0}
+  alterRitualZone: {fileID: 0}
   candle1Object: {fileID: 490219103}
   candle2Object: {fileID: 244346248}
   candle1: {fileID: 2094309143}
@@ -10791,8 +10799,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
-  m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13342,8 +13350,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
-  m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -16525,8 +16533,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bbc66540a72ba04a94c27fc1e35a3e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleManager
+  SpellBookRenderer: {fileID: 0}
+  SpellBookOpenedSprite: {fileID: 0}
   pentagramRenderer: {fileID: 1117356223}
   revealedSprite: {fileID: 1258937573553817541, guid: 9ac11e7df7624ce449108517a8324abe, type: 3}
+  statueRenderer: {fileID: 0}
+  activatedStatueSprite: {fileID: 0}
+  angelScrollPrefab: {fileID: 0}
+  angelScrollSpawnPoint: {fileID: 0}
+  rosePrefab: {fileID: 0}
+  alterRitualZone: {fileID: 0}
   candle1Object: {fileID: 490219103}
   candle2Object: {fileID: 244346248}
   candle1: {fileID: 2094309143}

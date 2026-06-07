@@ -166,7 +166,7 @@ public class PuzzleManager : MonoBehaviour
             
                 };
 
-            DialogueManager.Instance.StartDialogue(playerID, vampireMirrorText);
+            DialogueManager.Instance.StartDialogue(playerID, vampireMirrorText, InteractableType.Mirror);
                 return;
             }
 
@@ -225,7 +225,7 @@ public class PuzzleManager : MonoBehaviour
 
         litTableCandles = 0;
 
-        mirrorActive = false;
+       
         if(activeMirror != null)
         {
             activeMirror.MirrorGameOff();

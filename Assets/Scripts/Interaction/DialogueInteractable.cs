@@ -12,7 +12,7 @@ public class DialogueInteractable : MonoBehaviour, IInteractable
 
         Debug.Log("Player ID " + playerID);
 
-        DialogueManager.Instance.SetInteractableType(interactableType);
-        DialogueManager.Instance.StartDialogue(playerID, dialoguePages);
+    
+        DialogueManager.Instance.StartDialogue(playerID, dialoguePages, interactableType);
     }
 }
