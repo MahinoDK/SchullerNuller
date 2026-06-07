@@ -9,7 +9,13 @@ public class AltarRitualZone : MonoBehaviour
     private bool ritualActive = false;
     private bool ritualStarting = false;
 
+    [SerializeField] private float ritualDuration = 30.0f;
+    private float ritualProgress = 0.0f;
 
+    public float RitualPercent()
+    {
+        return ritualProgress / ritualDuration;
+    }
     private void OnTriggerStay2D(Collider2D other)
     {
         PlayerInteraction player = other.GetComponent<PlayerInteraction>();
@@ -66,9 +72,16 @@ public class AltarRitualZone : MonoBehaviour
     {
         if (!ritualActive) return;
 
+        ritualProgress += Time.deltaTime;
+
         if (vampireInZone == null || !VampireHasSpellBook(vampireInZone))
         {
             StopRitual();
+        }
+
+        if (ritualProgress >= ritualDuration)
+        {
+            CompleteRitual();
         }
     }
 
@@ -81,11 +94,22 @@ public class AltarRitualZone : MonoBehaviour
 
     private void StopRitual()
     {
+       
         ritualStarting = false;
 
         if (!ritualActive) return;
-
+        ritualProgress = 0f;
         ritualActive = false;
         enemySpawner.StopAndResetSpawning();
+    }
+
+    private void CompleteRitual()
+    {
+        ritualActive = false;
+        Debug.Log("Ritual complete! Portal should open now.");
+        enemySpawner.StopAndResetSpawning();
+        
+        // instantiate portal to win game here
+
     }
 }

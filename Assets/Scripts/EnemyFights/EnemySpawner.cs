@@ -60,7 +60,7 @@ public class EnemySpawner : MonoBehaviour
 
         spawnedEnemies.Clear();
 
-        Debug.Log("Ritual failed. Ghosts vanished.");
+        
     }
 
     private IEnumerator SpawnEnemyAfterRandomDelay()

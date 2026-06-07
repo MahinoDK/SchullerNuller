@@ -59,7 +59,11 @@ public class PlayerInteraction : MonoBehaviour
     {
         Debug.Log(gameObject.name + " interacting. Held item: " + (heldItem != null ? heldItem.itemType.ToString() : "NONE"));
         Debug.Log("Interact button pressed");
+
         if (!context.performed) return;
+
+        
+       
 
         int playerID = GetComponent<PlayerMovement>().playerID; //get the player ID from the player movement script, to know which dialogue to show for which player
         if (heldItem != null) //if holding an item we can trigger animation to!
@@ -70,6 +74,24 @@ public class PlayerInteraction : MonoBehaviour
         else
         {
             Debug.Log("No held item");
+        }
+        if (heldItem != null && heldItem.itemType == ItemType.angelScroll)
+        {
+            Collider2D[] hits = Physics2D.OverlapCircleAll(
+                transform.position,
+                2f);
+
+            foreach (Collider2D hit in hits)
+            {
+                GhostMovement ghost = hit.GetComponent<GhostMovement>();
+
+                if (ghost != null)
+                {
+                    Debug.Log("Purifying ghost: " + ghost.gameObject.name);
+                    ghost.Purify();
+                    return;
+                }
+            }
         }
 
         if (DialogueManager.Instance.IsDialogueOpen(playerID))
