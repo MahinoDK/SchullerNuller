@@ -74,11 +74,8 @@ public class MirrorGame : MonoBehaviour
         Debug.Log("Hit target!");
         MoveTarget();
         
-        if(PuzzleManager.Instance.IsMirrorActive())
-        {
-            PuzzleManager.Instance.MirrorPuzzleComplete();
-        }
-        else if (AltarRitualZone.Instance.IsRitualActive())
+        
+        if (AltarRitualZone.Instance.IsRitualActive())
         {
             AltarRitualZone.Instance.RitualHitSuccess();
         }
