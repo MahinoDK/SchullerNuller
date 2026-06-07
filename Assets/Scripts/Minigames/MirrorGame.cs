@@ -4,6 +4,8 @@ using static UnityEngine.GraphicsBuffer;
 public class MirrorGame : MonoBehaviour
 {
     public static MirrorGame Instance;
+
+   
     [SerializeField] private Transform marker;
     [SerializeField] private Transform target;
     [SerializeField] private Transform leftBoundary;
@@ -20,12 +22,19 @@ public class MirrorGame : MonoBehaviour
     void Start()
     {
         Instance = this;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-       if (!PuzzleManager.Instance.IsMirrorActive()) return;
+        bool ritualActive = AltarRitualZone.Instance != null && AltarRitualZone.Instance.IsRitualActive();
+
+        if (!PuzzleManager.Instance.IsMirrorActive() &&
+            !ritualActive)
+        {
+            return;
+        }
 
         if (movingRight)
         {
@@ -48,17 +57,26 @@ public class MirrorGame : MonoBehaviour
 
     public void CheckHit()
     {
-        if (markerScript.insideTarget)
+        if (!markerScript.insideTarget)
         {
-            Debug.Log("Success!");
-            MoveTarget();
+            if (PuzzleManager.Instance.IsMirrorActive())
+            {
+                PuzzleManager.Instance.MirrorPuzzleLost();
+            }
 
+            return;
         }
-        else
+        
+        Debug.Log("Hit target!");
+        MoveTarget();
+        
+        if(PuzzleManager.Instance.IsMirrorActive())
         {
-            Debug.Log("Missed! Try again.");
-            PuzzleManager.Instance.MirrorPuzzleLost();
-            
+            PuzzleManager.Instance.MirrorPuzzleComplete();
+        }
+        else if (AltarRitualZone.Instance.IsRitualActive())
+        {
+            AltarRitualZone.Instance.RitualHitSuccess();
         }
     }
 
