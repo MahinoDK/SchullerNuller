@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghost Kitty
       objectReference: {fileID: 0}
+    - target: {fileID: 1160356261127867848, guid: 6708139db68917a4989876051771e507, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ecd7c0a3443e741478f72491a190888c, type: 2}
     - target: {fileID: 3626916397498700004, guid: 6708139db68917a4989876051771e507, type: 3}
       propertyPath: m_Color.b
       value: 0.745283
