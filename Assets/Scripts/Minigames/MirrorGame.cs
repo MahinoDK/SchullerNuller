@@ -17,9 +17,12 @@ public class MirrorGame : MonoBehaviour
 
     private bool movingRight = true;
 
+    [SerializeField] float timeLimit = 5f;
+    private float currentTime;
+
     [SerializeField] private MarkerScript markerScript;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
         Instance = this;
         
@@ -36,6 +39,17 @@ public class MirrorGame : MonoBehaviour
             return;
         }
 
+        if (PuzzleManager.Instance.IsMirrorActive())
+        {
+            currentTime -= Time.deltaTime;
+
+            if (currentTime <= 0f)
+            {
+                PuzzleManager.Instance.MirrorPuzzleLost();
+                return;
+            }
+        }
+        
         if (movingRight)
         {
             marker.position += Vector3.right * speed * Time.deltaTime;
@@ -73,9 +87,10 @@ public class MirrorGame : MonoBehaviour
 
         Debug.Log("Hit target!");
         MoveTarget();
+       
         
         
-        if (AltarRitualZone.Instance.IsRitualActive())
+        if (AltarRitualZone.Instance != null && AltarRitualZone.Instance.IsRitualActive())
         {
             AltarRitualZone.Instance.RitualHitSuccess();
         }
@@ -86,6 +101,11 @@ public class MirrorGame : MonoBehaviour
         float randomX = Random.Range(leftBoundary.position.x +0.1f,rightBoundary.position.x -0.1f);
 
         target.position = new Vector3(randomX,target.position.y,target.position.z);
-    }
 
+        currentTime = timeLimit;
+    }
+    public void StartMirrorTimer()
+    {
+        currentTime = timeLimit;
+    }
 }

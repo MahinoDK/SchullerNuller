@@ -10,7 +10,7 @@ public class PlayerInteraction : MonoBehaviour
     private List<Grabbable> nearbyGrabbables = new List<Grabbable>(); //grabbale
     private List<IInteractable> nearbyInteractables = new List<IInteractable>(); //interactable
     private Grabbable heldItem;
-
+    
   
     
     

@@ -4,8 +4,6 @@ public class PuzzleManager : MonoBehaviour
 {
     public static PuzzleManager Instance;
 
-    private int litTorches = 0;
-    private int totalTorchesNeeded = 5;
     [SerializeField] private SpriteRenderer SpellBookRenderer;
     [SerializeField] private Sprite SpellBookOpenedSprite;
 
@@ -223,6 +221,7 @@ public class PuzzleManager : MonoBehaviour
     public void StartMirrorPuzzle()
     {
         mirrorActive = true;
+        MirrorGame.Instance.StartMirrorTimer();
         Debug.Log("The mirror puzzle is now active. Player 2 can interact with the mirror.");
         minigameVisual.SetActive(true);
        

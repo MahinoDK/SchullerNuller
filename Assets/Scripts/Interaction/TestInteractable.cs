@@ -61,14 +61,11 @@ public class TestInteractable : MonoBehaviour, IInteractable
         }
     }
     public void MirrorGameOn()
-    {
-        Debug.Log("Activating mirror game for " + gameObject.name);
-
-        Debug.Log(animator);
+    {  
         if (animator != null)
         {
             animator.SetBool("IsActive", true);
-            Debug.Log("Mirror game activated for " + gameObject.name);
+            
         }
     }
     public void MirrorGameOff()
