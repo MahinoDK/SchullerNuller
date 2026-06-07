@@ -9,5 +9,7 @@ public enum InteractableType
     Pentagram,
     BookShelf,
     Brunhilde,
-    TableCandle
+    TableCandle,
+    RoseBush,
+    Grave
 } 

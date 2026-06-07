@@ -7,5 +7,7 @@ public enum ItemType
     BloodVial,
     Garlic,
     TestItem,
-    SpellBook
+    SpellBook,
+    Rose,
+    angelScroll
 }

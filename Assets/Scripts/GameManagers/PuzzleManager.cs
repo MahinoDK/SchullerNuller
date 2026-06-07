@@ -6,8 +6,21 @@ public class PuzzleManager : MonoBehaviour
 
     private int litTorches = 0;
     private int totalTorchesNeeded = 5;
+    [SerializeField] private SpriteRenderer SpellBookRenderer;
+    [SerializeField] private Sprite SpellBookOpenedSprite;
+
     [SerializeField] private SpriteRenderer pentagramRenderer;
     [SerializeField] private Sprite revealedSprite;
+
+    [SerializeField] private SpriteRenderer statueRenderer;
+    [SerializeField] private Sprite activatedStatueSprite;
+
+    [SerializeField] private GameObject angelScrollPrefab;
+    [SerializeField] private Transform angelScrollSpawnPoint;
+
+    [SerializeField] private GameObject rosePrefab;
+
+    [SerializeField] private GameObject alterRitualZone;
 
     private int litTableCandles = 0;
 
@@ -60,6 +73,24 @@ public class PuzzleManager : MonoBehaviour
 
         InteractableType targetType = interactable.interactableType;
 
+        // ROSE BUSH
+        if (targetType == InteractableType.RoseBush)
+        {
+            if (heldItem != null)
+            {
+                Debug.Log("Your hands are full.");
+                return;
+            }
+
+            Debug.Log("You pluck a rose.");
+
+
+            Instantiate(rosePrefab, interactable.transform.position, Quaternion.identity);
+
+            return;
+        }
+
+
         // LIGHTER + TORCH
         if (heldItemType == ItemType.Lighter && targetType == InteractableType.Torch)
         {
@@ -81,6 +112,10 @@ public class PuzzleManager : MonoBehaviour
             {
                 Debug.Log("All torches are lit. The pentagram is active");
                 pentagramRenderer.sprite = revealedSprite;
+                statueRenderer.sprite = activatedStatueSprite;
+                Instantiate(angelScrollPrefab, angelScrollSpawnPoint.position, Quaternion.identity);
+
+                alterRitualZone.SetActive(true);
             }
 
             return;
@@ -104,8 +139,10 @@ public class PuzzleManager : MonoBehaviour
             if (litTableCandles >= 2)
             {
                Debug.Log("The book now Opens"); // �NDRE SPRITE HER MATHILDE MANGE TAK!
+                SpellBookRenderer.sprite = SpellBookOpenedSprite;
 
-              
+                bookUnlocked = true;
+               tableBook.canBeGrabbed = true;
                 MirrorPuzzleComplete();
             }
                 return;

@@ -1324,7 +1324,7 @@
                 {
                     "name": "",
                     "id": "549d8f11-5862-4215-8411-9ac50c9d12e7",
-                    "path": "<Keyboard>/numpad0",
+                    "path": "<Keyboard>/l",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -1335,7 +1335,7 @@
                 {
                     "name": "",
                     "id": "e5cc7d09-e0b0-48ba-a01e-75632a5a091e",
-                    "path": "<Keyboard>/ctrl",
+                    "path": "<Keyboard>/k",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1346,7 +1346,7 @@
                 {
                     "name": "",
                     "id": "62e95d14-72bf-417f-9c82-3914c2a26629",
-                    "path": "<Keyboard>/shift",
+                    "path": "<Keyboard>/j",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
