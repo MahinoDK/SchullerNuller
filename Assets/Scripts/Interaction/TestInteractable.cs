@@ -76,7 +76,8 @@ public class TestInteractable : MonoBehaviour, IInteractable
         if (animator != null)
         {
             animator.SetBool("IsActive", false);
-
+        }
+    }
     public void TriggerAnimation(string triggerName)
     {
         Animator animator = GetComponent<Animator>();
