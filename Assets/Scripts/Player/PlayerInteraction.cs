@@ -93,7 +93,11 @@ public class PlayerInteraction : MonoBehaviour
                 }
             }
         }
-
+        if (playerID == 1 && AltarRitualZone.Instance != null &&  AltarRitualZone.Instance.IsRitualActive() &&  AltarRitualZone.Instance.IsVampireInZone())
+        {
+            MirrorGame.Instance.CheckHit();
+            return;
+        }
         if (DialogueManager.Instance.IsDialogueOpen(playerID))
         {
             DialogueManager.Instance.NextPage(playerID);
