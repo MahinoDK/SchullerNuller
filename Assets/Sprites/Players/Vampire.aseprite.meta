@@ -129,14 +129,14 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Vampire
     originalName: 
-    pivot: {x: 0.49999994, y: -0.00045952972}
+    pivot: {x: 0.5, y: -0.0925926}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 4
-      y: 4
+      y: 129
       width: 36
       height: 54
     spriteID: d52871db93025cd409861c836ea809c3
@@ -147,7 +147,91 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
+    uvTransform: {x: -10, y: 120}
+  - name: Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: -0.094339624}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 68
+      width: 38
+      height: 53
+    spriteID: 3328d3398d77e1b4e9f136e5a91567ff
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 68}
+  - name: Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.0925926}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 191
+      width: 36
+      height: 54
+    spriteID: df494f3fae5b3ad4196680e69ef327f4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -10, y: 182}
+  - name: Frame_3
+    originalName: 
+    pivot: {x: 0.5263158, y: -0.08928572}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 38
+      height: 56
+    spriteID: d7029f8880158174fa5f58c5d51e5fc2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: -0.0925926}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 50
+      y: 4
+      width: 36
+      height: 54
+    spriteID: dc01b09fcc12a3c42b910d2aac07996d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 36, y: -5}
   spriteSheetImportData: []
   tileSetImportData: []
   asepriteLayers:
@@ -163,15 +247,51 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Vampire
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 14
-        y: 9
-        width: 36
-        height: 54
+        x: 0
+        y: -4
+        width: 64
+        height: 64
       spriteId: d52871db93025cd409861c836ea809c3
+    - name: Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 13
+        y: 5
+        width: 38
+        height: 53
+      spriteId: 3328d3398d77e1b4e9f136e5a91567ff
+    - name: Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -4
+        width: 64
+        height: 64
+      spriteId: df494f3fae5b3ad4196680e69ef327f4
+    - name: Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 12
+        y: 5
+        width: 38
+        height: 56
+      spriteId: d7029f8880158174fa5f58c5d51e5fc2
+    - name: Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -4
+        width: 64
+        height: 64
+      spriteId: dc01b09fcc12a3c42b910d2aac07996d
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -206,4 +326,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 64, y: 64}
-  previousTextureSize: {x: 64, y: 64}
+  previousTextureSize: {x: 128, y: 256}
