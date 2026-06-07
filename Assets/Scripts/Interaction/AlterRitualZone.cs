@@ -9,12 +9,20 @@ public class AltarRitualZone : MonoBehaviour
     private bool ritualActive = false;
     private bool ritualStarting = false;
 
-    [SerializeField] private float ritualDuration = 30.0f;
+    [SerializeField] private float ritualDuration = 100.0f;
     private float ritualProgress = 0.0f;
 
+    [SerializeField] private GameObject ritualMinigameVisual;
+
+    [SerializeField] private Transform progressFill;
+
+    private bool ritualCompleted = false;
     public void Awake()
     {
         Instance = this;
+
+        ritualProgress = 0f;
+        UpdateProgressBar();
     }
     public float RitualPercent()
     {
@@ -24,6 +32,11 @@ public class AltarRitualZone : MonoBehaviour
     {
         return ritualActive;
     }
+    public bool IsVampireInZone()
+    {
+               return vampireInZone != null;
+    }
+
     private void OnTriggerStay2D(Collider2D other)
     {
         PlayerInteraction player = other.GetComponent<PlayerInteraction>();
@@ -37,6 +50,7 @@ public class AltarRitualZone : MonoBehaviour
 
         vampireInZone = player;
 
+        if (ritualCompleted) return;
         if (VampireHasSpellBook(player))
         {
             if (!ritualActive && !ritualStarting)
@@ -54,6 +68,9 @@ public class AltarRitualZone : MonoBehaviour
     {
         ritualStarting = true;
 
+        ritualProgress = 0;
+        UpdateProgressBar();
+
         yield return new WaitForSeconds(1.0f);
 
         ritualStarting = false;
@@ -62,6 +79,11 @@ public class AltarRitualZone : MonoBehaviour
         {
             ritualActive = true;
             enemySpawner.StartSpawning();
+            
+            if (ritualMinigameVisual != null)
+            {
+                ritualMinigameVisual.SetActive(true);
+            }
         }
     }
 
@@ -100,23 +122,36 @@ public class AltarRitualZone : MonoBehaviour
         return heldItem != null && heldItem.itemType == ItemType.SpellBook;
     }
 
-    private void StopRitual()
+    public void StopRitual()
     {
        
         ritualStarting = false;
 
         if (!ritualActive) return;
         ritualProgress = 0f;
+        UpdateProgressBar();
         ritualActive = false;
+
+        if (ritualMinigameVisual != null)
+        {
+            ritualMinigameVisual.SetActive(false);
+        }
         enemySpawner.StopAndResetSpawning();
+
+        
     }
 
-    private void CompleteRitual()
+    public void CompleteRitual()
     {
         ritualActive = false;
         Debug.Log("Ritual complete! Portal should open now.");
+
+        if  (ritualMinigameVisual != null)
+        {
+            ritualMinigameVisual.SetActive(false);
+        }
         enemySpawner.StopAndResetSpawning();
-        
+        ritualCompleted = true;
         // instantiate portal to win game here
 
     }
@@ -124,13 +159,39 @@ public class AltarRitualZone : MonoBehaviour
     public void RitualHitSuccess()
     {
         if (!ritualActive) return;
-        ritualProgress += 1.0f; // Adjust this value based on how much progress each hit should give
+        ritualProgress += 5.0f; // Adjust this value based on how much progress each hit should give
 
         Debug.Log("ritual progress: " + ritualProgress + "/" + ritualDuration);
 
         if (ritualProgress >= ritualDuration)
         {
+            ritualProgress = ritualDuration;
             CompleteRitual();
         }
+        UpdateProgressBar();
+    }
+    public void RitualHitFail()
+    {
+        if (!ritualActive) return;
+
+        ritualProgress -= 3.0f; // Adjust this value based on how much progress each fail should take away
+
+        if (ritualProgress < 0f)
+        {
+            ritualProgress = 0f;
+        }
+        UpdateProgressBar();
+        Debug.Log("ritual progress: " + ritualProgress + "/" + ritualDuration);
+    }
+
+    private void UpdateProgressBar()
+    {
+        float percent = ritualProgress / ritualDuration;
+
+        progressFill.localScale = new Vector3(percent, 1f, 1f);
+
+        progressFill.localPosition = new Vector3((1f - percent) * 0.5f, 0f, 0f);
+
+        Debug.Log("percent: " + percent);
     }
 }

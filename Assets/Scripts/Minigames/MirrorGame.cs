@@ -63,10 +63,14 @@ public class MirrorGame : MonoBehaviour
             {
                 PuzzleManager.Instance.MirrorPuzzleLost();
             }
+            else if (AltarRitualZone.Instance.IsRitualActive())
+            {
+                AltarRitualZone.Instance.RitualHitFail();
+            }
 
             return;
         }
-        
+
         Debug.Log("Hit target!");
         MoveTarget();
         
