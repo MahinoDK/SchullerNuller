@@ -4973,7 +4973,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 58c2356b5c2e1ca408190bd47a3355ac, type: 3}
       propertyPath: m_SortingLayer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 58c2356b5c2e1ca408190bd47a3355ac, type: 3}
       propertyPath: m_SortingLayerID
@@ -5992,7 +5992,7 @@ Transform:
   m_GameObject: {fileID: 722659528}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.01, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8566,7 +8566,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 58c2356b5c2e1ca408190bd47a3355ac, type: 3}
       propertyPath: m_SortingLayer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 58c2356b5c2e1ca408190bd47a3355ac, type: 3}
       propertyPath: m_SortingLayerID
@@ -9251,7 +9251,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 58c2356b5c2e1ca408190bd47a3355ac, type: 3}
       propertyPath: m_SortingLayer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 58c2356b5c2e1ca408190bd47a3355ac, type: 3}
       propertyPath: m_SortingLayerID
@@ -17030,7 +17030,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 58c2356b5c2e1ca408190bd47a3355ac, type: 3}
       propertyPath: m_SortingLayer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 58c2356b5c2e1ca408190bd47a3355ac, type: 3}
       propertyPath: m_SortingLayerID
@@ -17883,6 +17883,12 @@ MonoBehaviour:
   candle1: {fileID: 2094309143}
   candle2: {fileID: 1024330019}
   minigameVisual: {fileID: 2003086595}
+  ritualCandles:
+  - {fileID: 1403054921}
+  - {fileID: 2009497042}
+  - {fileID: 1921745511}
+  - {fileID: 585529801}
+  - {fileID: 2082405209}
   tableBook: {fileID: 1248360546}
 --- !u!4 &2025313334
 Transform:

@@ -37,6 +37,11 @@ public class PuzzleManager : MonoBehaviour
 
     public GameObject minigameVisual;
 
+    [SerializeField] private TestInteractable[] ritualCandles;
+    private int[] correctOrder = {0,1, 2, 3, 4 };
+    private int currentStep = 0;
+    private bool torchpuzzlesolved = false;
+
     [SerializeField]
     private Grabbable tableBook;
 
@@ -56,6 +61,8 @@ public class PuzzleManager : MonoBehaviour
         candle1Object.SetActive(false);
         candle2Object.SetActive(false);
         minigameVisual.SetActive(false);
+
+       
 
     }
 
@@ -95,33 +102,54 @@ public class PuzzleManager : MonoBehaviour
         if (heldItemType == ItemType.Lighter && targetType == InteractableType.Torch)
         {
 
+            if(torchpuzzlesolved)
+            {
+                return;
+            }
+
             if (interactable.HasBeenActivated)
             {
                 Debug.Log("This torch is already lit.");
                 return;
             }
 
-            Debug.Log("You light the torch.");
 
-            interactable.SetLit();
-            interactable.MarkActivated();
+            int torchIndex = System.Array.IndexOf(ritualCandles, interactable);
 
-            litTorches++;
-
-            if (litTorches >= totalTorchesNeeded)
+            if (torchIndex == -1)
             {
-                Debug.Log("All torches are lit. The pentagram is active");
-                pentagramRenderer.sprite = revealedSprite;
-                statueRenderer.sprite = activatedStatueSprite;
-                Instantiate(angelScrollPrefab, angelScrollSpawnPoint.position, Quaternion.identity);
-
-                alterRitualZone.SetActive(true);
+                Debug.LogError(interactable.name + " is not assigned in ritualCandles!");
+                return;
             }
+            Debug.Log("Torch index: " + torchIndex);
+
+            if (torchIndex == correctOrder[currentStep])
+            {
+                interactable.SetLit();
+                interactable.MarkActivated();
+                currentStep++;
+
+                Debug.Log("You lit the correct torch in the sequence.");
+
+                if(currentStep >= correctOrder.Length)
+                {
+                    Debug.Log("pentagram is active");
+                    pentagramRenderer.sprite = revealedSprite;
+                    statueRenderer.sprite = activatedStatueSprite;
+                    torchpuzzlesolved = true;
+
+                    Instantiate(angelScrollPrefab, angelScrollSpawnPoint.position, Quaternion.identity);
+                    alterRitualZone.SetActive(true);
+                }
+            }
+            else
+            {
+                Debug.Log("You lit the wrong torch. The sequence resets.");
+                ResetTorchPuzzle();
+            }
+              
 
             return;
-
-           
-
         }
         if (heldItemType == ItemType.Lighter && targetType == InteractableType.TableCandle)
         {
@@ -229,6 +257,17 @@ public class PuzzleManager : MonoBehaviour
         if(activeMirror != null)
         {
             activeMirror.MirrorGameOff();
+        }
+    }
+    private void ResetTorchPuzzle()
+    {
+        currentStep = 0;
+
+        foreach (TestInteractable torch in ritualCandles)
+        {
+            Debug.Log("Resetting torch: " + torch.name);
+            torch.MarkUnActivated();
+            torch.SetUnlit();
         }
     }
 }

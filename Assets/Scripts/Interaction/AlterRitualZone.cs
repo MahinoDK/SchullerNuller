@@ -4,7 +4,7 @@ using System.Collections;
 public class AltarRitualZone : MonoBehaviour
 {
     [SerializeField] private EnemySpawner enemySpawner;
-
+    public static AltarRitualZone Instance;
     private PlayerInteraction vampireInZone;
     private bool ritualActive = false;
     private bool ritualStarting = false;
@@ -12,9 +12,17 @@ public class AltarRitualZone : MonoBehaviour
     [SerializeField] private float ritualDuration = 30.0f;
     private float ritualProgress = 0.0f;
 
+    public void Awake()
+    {
+        Instance = this;
+    }
     public float RitualPercent()
     {
         return ritualProgress / ritualDuration;
+    }
+    public bool IsRitualActive()
+    {
+        return ritualActive;
     }
     private void OnTriggerStay2D(Collider2D other)
     {
@@ -72,7 +80,7 @@ public class AltarRitualZone : MonoBehaviour
     {
         if (!ritualActive) return;
 
-        ritualProgress += Time.deltaTime;
+       
 
         if (vampireInZone == null || !VampireHasSpellBook(vampireInZone))
         {
@@ -111,5 +119,18 @@ public class AltarRitualZone : MonoBehaviour
         
         // instantiate portal to win game here
 
+    }
+
+    public void RitualHitSuccess()
+    {
+        if (!ritualActive) return;
+        ritualProgress += 1.0f; // Adjust this value based on how much progress each hit should give
+
+        Debug.Log("ritual progress: " + ritualProgress + "/" + ritualDuration);
+
+        if (ritualProgress >= ritualDuration)
+        {
+            CompleteRitual();
+        }
     }
 }
