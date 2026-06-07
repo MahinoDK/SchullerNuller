@@ -10949,6 +10949,7 @@ MonoBehaviour:
   leftBoundary: {fileID: 1318417963}
   rightBoundary: {fileID: 1458247989}
   speed: 2
+  timeLimit: 5
   markerScript: {fileID: 1023049407}
 --- !u!1 &1004545483
 GameObject:
@@ -18690,6 +18691,7 @@ MonoBehaviour:
   leftBoundary: {fileID: 389046093}
   rightBoundary: {fileID: 1725863774}
   speed: 2
+  timeLimit: 5
   markerScript: {fileID: 188964123}
 --- !u!1 &2009497039 stripped
 GameObject:
