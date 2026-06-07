@@ -54,7 +54,7 @@ PrefabInstance:
     - target: {fileID: 1160356261127867848, guid: 9d6cb0d583bacdc4ea03490350e1fa30, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: a27c605b8e5ec24469d29ad5fca7af87, type: 2}
+      objectReference: {fileID: 9100000, guid: d4f04ed147723b448a015a1efba467c8, type: 2}
     - target: {fileID: 3626916397498700004, guid: 9d6cb0d583bacdc4ea03490350e1fa30, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -470,7 +470,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
   holdPosition: {fileID: 5119744058266495197}
-  interactPrompt: {fileID: 0}
 --- !u!61 &6390145589425867770
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -505,17 +504,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.03391862, y: 0.12366}
+  m_Offset: {x: 0.003287077, y: 0.22522011}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.49999994, y: -0.00045952972}
+    pivot: {x: 0.5, y: -0.0925926}
     oldSize: {x: 1.125, y: 1.6875}
     newSize: {x: 1.6875, y: 1.875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.9554076, y: 0.25991303}
+  m_Size: {x: 0.45587397, y: 0.14706844}
   m_EdgeRadius: 0
 --- !u!4 &2067399581256630435 stripped
 Transform:
