@@ -454,6 +454,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.1484737, y: 0.570351}
   m_EdgeRadius: 0
+--- !u!114 &31333117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31333113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f095883cf9646734880d7874e76316b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueInteractable
+  dialoguePages:
+  - A grave with a bunch of Roses
+  interactableType: 0
 --- !u!1 &42843723
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,6 +1235,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.1595249, y: 0.56564903}
   m_EdgeRadius: 0
+--- !u!114 &197967377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197967373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f095883cf9646734880d7874e76316b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueInteractable
+  dialoguePages:
+  - A grave with a bunch of Roses
+  interactableType: 0
 --- !u!1001 &206342604
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1388,6 +1418,102 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Size: {x: 0.08639615, y: 1}
+  m_EdgeRadius: 0
+--- !u!1 &228438785
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 228438786}
+  - component: {fileID: 228438788}
+  - component: {fileID: 228438787}
+  m_Layer: 0
+  m_Name: windowPainting
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &228438786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228438785}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.73, y: 3.55, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1762806919}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &228438787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228438785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f095883cf9646734880d7874e76316b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueInteractable
+  dialoguePages:
+  - This Painting
+  - It reminds me of someone.
+  - But i dont know who.
+  interactableType: 0
+--- !u!61 &228438788
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228438785}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &244346248 stripped
 GameObject:
@@ -2076,6 +2202,7 @@ Transform:
   - {fileID: 1332137651}
   - {fileID: 844809426}
   - {fileID: 1188974976}
+  - {fileID: 1980971283}
   m_Father: {fileID: 1299681070}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &365482130
@@ -4808,6 +4935,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.1484241, y: 0.43695068}
   m_EdgeRadius: 0
+--- !u!114 &420909059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420909055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f095883cf9646734880d7874e76316b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueInteractable
+  dialoguePages:
+  - A grave with a bunch of Roses
+  interactableType: 0
 --- !u!1 &424583106
 GameObject:
   m_ObjectHideFlags: 0
@@ -5205,7 +5347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 58c2356b5c2e1ca408190bd47a3355ac, type: 3}
       propertyPath: m_SortingLayer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 58c2356b5c2e1ca408190bd47a3355ac, type: 3}
       propertyPath: m_SortingLayerID
@@ -5262,6 +5404,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 58c2356b5c2e1ca408190bd47a3355ac, type: 3}
       insertIndex: -1
       addedObject: {fileID: 197967375}
+    - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 58c2356b5c2e1ca408190bd47a3355ac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 197967377}
   m_SourcePrefab: {fileID: -8435245712485981826, guid: 58c2356b5c2e1ca408190bd47a3355ac, type: 3}
 --- !u!1 &496860042
 GameObject:
@@ -5370,6 +5515,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.1389751, y: 0.5566815}
   m_EdgeRadius: 0
+--- !u!114 &507567316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507567312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f095883cf9646734880d7874e76316b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueInteractable
+  dialoguePages:
+  - A grave with a bunch of Roses
+  interactableType: 0
 --- !u!1 &515668762
 GameObject:
   m_ObjectHideFlags: 0
@@ -9187,7 +9347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 58c2356b5c2e1ca408190bd47a3355ac, type: 3}
       propertyPath: m_SortingLayer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 58c2356b5c2e1ca408190bd47a3355ac, type: 3}
       propertyPath: m_SortingLayerID
@@ -9244,6 +9404,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 58c2356b5c2e1ca408190bd47a3355ac, type: 3}
       insertIndex: -1
       addedObject: {fileID: 31333115}
+    - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 58c2356b5c2e1ca408190bd47a3355ac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 31333117}
   m_SourcePrefab: {fileID: -8435245712485981826, guid: 58c2356b5c2e1ca408190bd47a3355ac, type: 3}
 --- !u!1 &748434734
 GameObject:
@@ -9518,6 +9681,8 @@ MonoBehaviour:
   ritualDuration: 100
   ritualMinigameVisual: {fileID: 602180759}
   progressFill: {fileID: 601409363}
+  portalSpawnPoint: {fileID: 1980971282}
+  finishPortal: {fileID: 5673387499075140660, guid: d2960763e73fcc7408fcc92d8be64827, type: 3}
 --- !u!1 &761678506
 GameObject:
   m_ObjectHideFlags: 0
@@ -9918,7 +10083,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 58c2356b5c2e1ca408190bd47a3355ac, type: 3}
       propertyPath: m_SortingLayer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 58c2356b5c2e1ca408190bd47a3355ac, type: 3}
       propertyPath: m_SortingLayerID
@@ -9975,6 +10140,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 58c2356b5c2e1ca408190bd47a3355ac, type: 3}
       insertIndex: -1
       addedObject: {fileID: 420909057}
+    - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 58c2356b5c2e1ca408190bd47a3355ac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 420909059}
   m_SourcePrefab: {fileID: -8435245712485981826, guid: 58c2356b5c2e1ca408190bd47a3355ac, type: 3}
 --- !u!1 &788857626
 GameObject:
@@ -11269,6 +11437,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 671ca60bc3700904182a670f8cd163d8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1684914794}
+    - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 671ca60bc3700904182a670f8cd163d8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1684914797}
+    - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 671ca60bc3700904182a670f8cd163d8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1684914796}
   m_SourcePrefab: {fileID: -8435245712485981826, guid: 671ca60bc3700904182a670f8cd163d8, type: 3}
 --- !u!1001 &1024330017
 PrefabInstance:
@@ -14301,7 +14475,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 984be917aa5bf614db91aa510d199ee5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2073424268}
+    - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 984be917aa5bf614db91aa510d199ee5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2073424269}
   m_SourcePrefab: {fileID: -8435245712485981826, guid: 984be917aa5bf614db91aa510d199ee5, type: 3}
 --- !u!4 &1251229810 stripped
 Transform:
@@ -15820,6 +16000,7 @@ MonoBehaviour:
   dialoguePages:
   - The Queen Brunhilde.
   - May her reign last eternal!
+  - Meowmen
   interactableType: 7
 --- !u!61 &1537951566
 BoxCollider2D:
@@ -16472,6 +16653,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: c20f15146f7ba414d87d7a1155d6f894, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1677068622}
+    - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: c20f15146f7ba414d87d7a1155d6f894, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1677068626}
   m_SourcePrefab: {fileID: -8435245712485981826, guid: c20f15146f7ba414d87d7a1155d6f894, type: 3}
 --- !u!4 &1677068619 stripped
 Transform:
@@ -16537,6 +16721,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.0401001, y: 0.91808057}
   m_EdgeRadius: 0
+--- !u!114 &1677068626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553933760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f095883cf9646734880d7874e76316b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueInteractable
+  dialoguePages:
+  - This grave does not have any roses.
+  interactableType: 0
 --- !u!1 &1681921020
 GameObject:
   m_ObjectHideFlags: 0
@@ -16676,6 +16875,67 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.24425638}
+  m_EdgeRadius: 0
+--- !u!114 &1684914796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684914792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f095883cf9646734880d7874e76316b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueInteractable
+  dialoguePages:
+  - Its just a bunch of Books.
+  interactableType: 0
+--- !u!61 &1684914797
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684914792}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.01935023, y: 0.0054443777}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.48064977, y: 0.18439369}
+    oldSize: {x: 1, y: 0.9375}
+    newSize: {x: 1, y: 0.9375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 0.24771327}
   m_EdgeRadius: 0
 --- !u!1001 &1689507836
 PrefabInstance:
@@ -17197,6 +17457,7 @@ Transform:
   - {fileID: 1537951564}
   - {fileID: 221506289}
   - {fileID: 1656444573}
+  - {fileID: 228438786}
   m_Father: {fileID: 1257414991}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1799826604
@@ -17686,6 +17947,72 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: 8047384031cf39449ae3b921960dbb57, type: 3}
   m_PrefabInstance: {fileID: 1810212768}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1844907982 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2253911629886400664, guid: 23d68914dd7db9b438fa7df13d024612, type: 3}
+  m_PrefabInstance: {fileID: 1920337176}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1844907983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844907982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f095883cf9646734880d7874e76316b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueInteractable
+  dialoguePages:
+  - Another Angel Figure.
+  interactableType: 0
+--- !u!61 &1844907984
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844907982}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.2159195, y: 0.8079585}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.3943662, y: 0}
+    oldSize: {x: 2.21875, y: 3}
+    newSize: {x: 2.21875, y: 3}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.3698463, y: 0.5086503}
+  m_EdgeRadius: 0
 --- !u!1001 &1845649398
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17700,7 +18027,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 58c2356b5c2e1ca408190bd47a3355ac, type: 3}
       propertyPath: m_SortingLayer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 58c2356b5c2e1ca408190bd47a3355ac, type: 3}
       propertyPath: m_SortingLayerID
@@ -17757,6 +18084,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 58c2356b5c2e1ca408190bd47a3355ac, type: 3}
       insertIndex: -1
       addedObject: {fileID: 507567314}
+    - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 58c2356b5c2e1ca408190bd47a3355ac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 507567316}
   m_SourcePrefab: {fileID: -8435245712485981826, guid: 58c2356b5c2e1ca408190bd47a3355ac, type: 3}
 --- !u!1 &1847243891
 GameObject:
@@ -18090,7 +18420,13 @@ PrefabInstance:
     - {fileID: 1160356261127867848, guid: 23d68914dd7db9b438fa7df13d024612, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 23d68914dd7db9b438fa7df13d024612, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1844907983}
+    - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 23d68914dd7db9b438fa7df13d024612, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1844907984}
   m_SourcePrefab: {fileID: -8435245712485981826, guid: 23d68914dd7db9b438fa7df13d024612, type: 3}
 --- !u!1001 &1921745505
 PrefabInstance:
@@ -18315,6 +18651,37 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.24425638}
   m_EdgeRadius: 0
+--- !u!1 &1980971282
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1980971283}
+  m_Layer: 0
+  m_Name: PortalSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1980971283
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980971282}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.65, y: -3.67, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 333739314}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2003086595
 GameObject:
   m_ObjectHideFlags: 0
@@ -20312,6 +20679,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051100420}
   m_CullTransparentMesh: 1
+--- !u!1 &2073424265 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2253911629886400664, guid: 984be917aa5bf614db91aa510d199ee5, type: 3}
+  m_PrefabInstance: {fileID: 1251229809}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2073424268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073424265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f095883cf9646734880d7874e76316b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueInteractable
+  dialoguePages:
+  - This is a candle.
+  interactableType: 0
+--- !u!61 &2073424269
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073424265}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.18200654, y: 0.81581724}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.42857146, y: -0.17241381}
+    oldSize: {x: 0.65625, y: 0.90625}
+    newSize: {x: 0.65625, y: 0.90625}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.19848692, y: 0.49336553}
+  m_EdgeRadius: 0
 --- !u!1001 &2082405205
 PrefabInstance:
   m_ObjectHideFlags: 0
