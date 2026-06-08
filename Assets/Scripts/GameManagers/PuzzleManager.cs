@@ -247,9 +247,15 @@ public class PuzzleManager : MonoBehaviour
     public void StartMirrorPuzzle(PlayerInteraction player)
     {
         mirrorActive = true;
+
+        tableBook.GetComponent<Collider2D>().enabled = false;
+
         AudioManager.instance.Play("MirrorLoop");
+
         MirrorGame.Instance.StartMirrorTimer(player);
+
         Debug.Log("The mirror puzzle is now active. Player 2 can interact with the mirror.");
+
         minigameVisual.SetActive(true);
        
     }
@@ -263,6 +269,9 @@ public class PuzzleManager : MonoBehaviour
         tableBook.canBeGrabbed = true;
         candle1Object.GetComponent<Collider2D>().enabled = false;
         candle2Object.GetComponent<Collider2D>().enabled = false;
+
+        tableBook.GetComponent<Collider2D>().enabled = true;
+
     }
     public void MirrorPuzzleLost()
     {
@@ -278,6 +287,7 @@ public class PuzzleManager : MonoBehaviour
         candle1Object.SetActive(false);
         candle2Object.SetActive(false);
         minigameVisual.SetActive(false);
+        tableBook.GetComponent<Collider2D>().enabled = true;
 
 
         litTableCandles = 0;

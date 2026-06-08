@@ -11,6 +11,7 @@ public class Grabbable : MonoBehaviour
     private Collider2D col;
     private SpriteRenderer spriteRenderer;
 
+    private bool angelScrollDialogueShown = false;
     private Animator animator;
     public bool canBeGrabbed = true; //flag to control if the item can be grabbed, default to true but can be set to false for items that start as ungrabbable (like the spellbook)
 
@@ -40,6 +41,28 @@ public class Grabbable : MonoBehaviour
         //attacj to the player to hold and move with them
              transform.SetParent(holdPosition);
              transform.localPosition = Vector3.zero;
+
+
+        if(itemType == ItemType.angelScroll && !angelScrollDialogueShown)
+        {
+            Debug.Log("Holding angelscroll starting dialogue");
+            angelScrollDialogueShown=true;
+            PlayerInteraction player = holdPosition.GetComponentInParent<PlayerInteraction>();
+
+            if(player != null)
+            {
+                Debug.Log("Commencing dialogue");
+                int playerID = player.GetComponent<PlayerMovement>().playerID;
+
+                string[] scrollText =
+                {
+                    "A holy scroll",
+                    "Only the angelic descendents can unleash its power"
+                };
+
+                DialogueManager.Instance.StartDialogue(playerID, scrollText, InteractableType.None);
+            }
+        }
        }
 
 
