@@ -13072,11 +13072,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: d866129c5415c504f91034666572b156, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27.351
+      value: 0.84
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: d866129c5415c504f91034666572b156, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.19
+      value: -2.847
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: d866129c5415c504f91034666572b156, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15671,7 +15671,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: QueenPainting
-    clip: {fileID: 8300000, guid: 37487886640008948aa749ca5660ad23, type: 3}
+    clip: {fileID: 8300000, guid: f1e330adffd5eb941a2792f4f28de517, type: 3}
     volume: 0.1
     loop: 0
     source: {fileID: 0}
@@ -15728,7 +15728,12 @@ MonoBehaviour:
   - name: ButtonClick
     clip: {fileID: 8300000, guid: 27948d7ba91df114c8462f8c0c192ae8, type: 3}
     volume: 0.203
-    loop: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Kiss
+    clip: {fileID: 8300000, guid: 01b0e9facba34a74b8928ba494662811, type: 3}
+    volume: 0.194
+    loop: 0
     source: {fileID: 0}
 --- !u!4 &1351119021
 Transform:

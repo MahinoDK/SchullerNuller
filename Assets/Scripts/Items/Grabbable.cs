@@ -15,6 +15,9 @@ public class Grabbable : MonoBehaviour
     private Animator animator;
     public bool canBeGrabbed = true; //flag to control if the item can be grabbed, default to true but can be set to false for items that start as ungrabbable (like the spellbook)
 
+    private float lastScrollSoundTime = -999f;
+    [SerializeField] private float scrollSoundCooldown = 0.5f;
+
     public void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -56,8 +59,8 @@ public class Grabbable : MonoBehaviour
 
                 string[] scrollText =
                 {
-                    "A holy scroll",
-                    "Only the angelic descendents can unleash its power"
+                    "The sacred healing spell. Heals the living but vanquishes the undead.",
+                    "Only descendants of the goddess race can unleash its power"
                 };
 
                 DialogueManager.Instance.StartDialogue(playerID, scrollText, InteractableType.None);
@@ -83,7 +86,11 @@ public class Grabbable : MonoBehaviour
             if (playerMovement.playerID == 2) // nurse ID
             {
                 animator.SetTrigger("Use");
-                AudioManager.instance.Play("ScrollUse");
+                if (Time.time - lastScrollSoundTime > scrollSoundCooldown)
+                {
+                    AudioManager.instance.Play("ScrollUse");
+                    lastScrollSoundTime = Time.time;
+                }
             }
             else
             {
