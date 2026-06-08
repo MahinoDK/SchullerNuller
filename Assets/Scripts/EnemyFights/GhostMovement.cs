@@ -57,6 +57,7 @@ public class GhostMovement : MonoBehaviour
     private IEnumerator PurifyCoroutine()
     {
         anim.SetBool("isHit", true);
+        AudioManager.instance.Play("GhostHit");
         yield return new WaitForSeconds(1f);
         Debug.Log("Ghost purified!");
         Destroy(gameObject);

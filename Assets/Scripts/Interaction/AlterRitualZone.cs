@@ -81,6 +81,7 @@ public class AltarRitualZone : MonoBehaviour
         if (player == vampireInZone && VampireHasSpellBook(player))
         {
             ritualActive = true;
+            AudioManager.instance.Play("RitualLoop");
             enemySpawner.StartSpawning();
             
             if (ritualMinigameVisual != null)
@@ -129,6 +130,7 @@ public class AltarRitualZone : MonoBehaviour
     {
        
         ritualStarting = false;
+        AudioManager.instance.Stop("RitualLoop");
 
         if (!ritualActive) return;
         ritualProgress = 0f;
@@ -138,6 +140,7 @@ public class AltarRitualZone : MonoBehaviour
         if (ritualMinigameVisual != null)
         {
             ritualMinigameVisual.SetActive(false);
+            AudioManager.instance.Stop("Wrong");
         }
         enemySpawner.StopAndResetSpawning();
 
@@ -174,6 +177,7 @@ public class AltarRitualZone : MonoBehaviour
             CompleteRitual();
         }
         UpdateProgressBar();
+        AudioManager.instance.Play("Correct");
     }
     public void RitualHitFail()
     {

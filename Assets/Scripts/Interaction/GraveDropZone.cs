@@ -24,6 +24,7 @@ public class GraveDropZone : MonoBehaviour
             Debug.Log("Rose received at the grave!");
 
             graveInteractable.TriggerAnimation("Rise");
+            AudioManager.instance.Play("GraveRise");
 
             StartCoroutine(SpawnLighterAfterDelay());
 
@@ -39,5 +40,7 @@ public class GraveDropZone : MonoBehaviour
             lighterSpawnPoint.position,
             Quaternion.identity
         );
+        AudioManager.instance.Play("Arigato");
+        AudioManager.instance.Play("LighterSpawn");
     }
 }

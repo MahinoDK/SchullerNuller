@@ -74,6 +74,7 @@ public class EnemySpawner : MonoBehaviour
         GameObject newEnemy = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
 
         spawnedEnemies.Add(newEnemy);
+        AudioManager.instance.Play("GhostSpawn");
 
         Debug.Log("Ghost spawned.");
     }

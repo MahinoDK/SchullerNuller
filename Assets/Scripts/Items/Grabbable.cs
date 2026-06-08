@@ -52,6 +52,7 @@ public class Grabbable : MonoBehaviour
         if (itemType == ItemType.Lighter)
         {
             animator.SetTrigger("Use");
+            AudioManager.instance.Play("LighterUse");
         }
 
         if (itemType == ItemType.angelScroll)
@@ -59,6 +60,7 @@ public class Grabbable : MonoBehaviour
             if (playerMovement.playerID == 2) // nurse ID
             {
                 animator.SetTrigger("Use");
+                AudioManager.instance.Play("ScrollUse");
             }
             else
             {

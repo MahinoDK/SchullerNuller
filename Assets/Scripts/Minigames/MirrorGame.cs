@@ -97,6 +97,7 @@ public class MirrorGame : MonoBehaviour
         }
 
         Debug.Log("Hit target!");
+        AudioManager.instance.Play("Correct");
         MoveTarget();
        
         

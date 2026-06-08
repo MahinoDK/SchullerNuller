@@ -91,6 +91,7 @@ public class PuzzleManager : MonoBehaviour
             }
 
             Debug.Log("You pluck a rose.");
+            AudioManager.instance.Play("RosePluck");
 
 
             Instantiate(rosePrefab, interactable.transform.position, Quaternion.identity);
@@ -141,12 +142,14 @@ public class PuzzleManager : MonoBehaviour
 
                     Instantiate(angelScrollPrefab, angelScrollSpawnPoint.position, Quaternion.identity);
                     alterRitualZone.SetActive(true);
+                    AudioManager.instance.Play("PentagramReveal");
                 }
             }
             else
             {
                 Debug.Log("You lit the wrong torch. The sequence resets.");
                 ResetTorchPuzzle();
+                AudioManager.instance.Play("Wrong");
             }
               
 
@@ -169,6 +172,7 @@ public class PuzzleManager : MonoBehaviour
             {
                Debug.Log("The book now Opens"); // �NDRE SPRITE HER MATHILDE MANGE TAK!
                 SpellBookRenderer.sprite = SpellBookOpenedSprite;
+                AudioManager.instance.Play("BookOpen");
 
                 bookUnlocked = true;
                tableBook.canBeGrabbed = true;
@@ -243,6 +247,7 @@ public class PuzzleManager : MonoBehaviour
     public void StartMirrorPuzzle(PlayerInteraction player)
     {
         mirrorActive = true;
+        AudioManager.instance.Play("MirrorLoop");
         MirrorGame.Instance.StartMirrorTimer(player);
         Debug.Log("The mirror puzzle is now active. Player 2 can interact with the mirror.");
         minigameVisual.SetActive(true);
@@ -251,6 +256,7 @@ public class PuzzleManager : MonoBehaviour
     public void MirrorPuzzleComplete()
     {
         mirrorActive = false;
+        AudioManager.instance.Stop("MirrorLoop");
         Debug.Log("The mirror puzzle is now disabled");
         minigameVisual.SetActive(false);
         bookUnlocked = true;
@@ -261,7 +267,9 @@ public class PuzzleManager : MonoBehaviour
     public void MirrorPuzzleLost()
     {
         mirrorActive = false;
+        AudioManager.instance.Stop("MirrorLoop");
         Debug.Log("The mirror puzzle is now disabled. You failed to solve it in time.");
+        AudioManager.instance.Play("Wrong");
         candle1.MarkUnActivated();
         candle2.MarkUnActivated();
         candle1.SetUnlit();

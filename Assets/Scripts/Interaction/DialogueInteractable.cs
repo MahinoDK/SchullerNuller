@@ -8,6 +8,12 @@ public class DialogueInteractable : MonoBehaviour, IInteractable
     public InteractableType interactableType;
     public void Interact(PlayerInteraction player)
     {
+
+        if (interactableType == InteractableType.Brunhilde)
+        {
+            AudioManager.instance.Play("QueenPainting");
+        }
+
         int playerID = player.GetComponent<PlayerMovement>().playerID;
 
         Debug.Log("Player ID " + playerID);

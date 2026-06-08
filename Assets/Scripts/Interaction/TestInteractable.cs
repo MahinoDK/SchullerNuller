@@ -27,6 +27,7 @@ public class TestInteractable : MonoBehaviour, IInteractable
         if (animator != null)
         {
             animator.SetBool("isLit", true);
+            AudioManager.instance.Play("LightCandle");
         }
     }
 

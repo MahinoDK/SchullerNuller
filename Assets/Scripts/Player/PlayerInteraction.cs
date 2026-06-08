@@ -42,6 +42,7 @@ public class PlayerInteraction : MonoBehaviour
         heldItem = item;
         
         heldItem.Grab(holdPosition);
+        AudioManager.instance.Play("Grab");
     }
 
     public void Drop(InputAction.CallbackContext context)
@@ -52,6 +53,7 @@ public class PlayerInteraction : MonoBehaviour
         if (heldItem == null) return;
 
         heldItem.Drop(transform.position); //item dropped where player is positioned, new position for the item now
+        AudioManager.instance.Play("Drop");
         heldItem = null; //clear the held item reference
     }
 

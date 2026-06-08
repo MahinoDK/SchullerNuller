@@ -39,4 +39,10 @@ public class Manager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void PlayButtonSound()
+    {
+        AudioManager.instance.Play("ButtonClick");
+    }
+
 }
