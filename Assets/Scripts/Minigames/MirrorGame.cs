@@ -10,9 +10,10 @@ public class MirrorGame : MonoBehaviour
     [SerializeField] private Transform target;
     [SerializeField] private Transform leftBoundary;
     [SerializeField] private Transform rightBoundary;
-
+    private PlayerInteraction mirrorPlayer;
     [SerializeField] private float speed = 1f;
 
+    private Vector3 startPosition;
     private bool insideTarget = false;
 
     private bool movingRight = true;
@@ -33,8 +34,7 @@ public class MirrorGame : MonoBehaviour
     {
         bool ritualActive = AltarRitualZone.Instance != null && AltarRitualZone.Instance.IsRitualActive();
 
-        if (!PuzzleManager.Instance.IsMirrorActive() &&
-            !ritualActive)
+        if (!PuzzleManager.Instance.IsMirrorActive() && !ritualActive)
         {
             return;
         }
@@ -43,13 +43,24 @@ public class MirrorGame : MonoBehaviour
         {
             currentTime -= Time.deltaTime;
 
+            Debug.Log("Player pos: " + mirrorPlayer.transform.position);
+            Debug.Log("Start pos: " + startPosition);
+            Debug.Log("Distance: " + Vector3.Distance(mirrorPlayer.transform.position, startPosition));
+            if (Vector3.Distance(mirrorPlayer.transform.position, startPosition) > 0.1f)
+            {
+                PuzzleManager.Instance.MirrorPuzzleLost();
+                return;
+            }
+
             if (currentTime <= 0f)
             {
                 PuzzleManager.Instance.MirrorPuzzleLost();
                 return;
             }
         }
+
         
+
         if (movingRight)
         {
             marker.position += Vector3.right * speed * Time.deltaTime;
@@ -104,8 +115,10 @@ public class MirrorGame : MonoBehaviour
 
         currentTime = timeLimit;
     }
-    public void StartMirrorTimer()
+    public void StartMirrorTimer(PlayerInteraction player)
     {
         currentTime = timeLimit;
+        mirrorPlayer = player;
+        startPosition = player.transform.position;
     }
 }

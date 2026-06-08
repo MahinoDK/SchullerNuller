@@ -23,6 +23,8 @@ public class PuzzleManager : MonoBehaviour
     private int litTableCandles = 0;
 
     private bool mirrorActive = false;
+    private bool waitingForMirrorGame;
+   
 
     private bool bookUnlocked = false;
     [SerializeField] private GameObject candle1Object;
@@ -32,6 +34,7 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField] private TestInteractable candle2;
 
     private TestInteractable activeMirror;
+    private PlayerInteraction mirrorPlayer;
 
     public GameObject minigameVisual;
 
@@ -174,6 +177,8 @@ public class PuzzleManager : MonoBehaviour
                 return;
         }
 
+        
+
         if (targetType == InteractableType.Mirror)
         {
             int playerID = player.GetComponent<PlayerMovement>().playerID;
@@ -183,6 +188,7 @@ public class PuzzleManager : MonoBehaviour
                 return;
             }
 
+            
             if (playerID != 2)
             {
                 string[] vampireMirrorText =
@@ -198,11 +204,22 @@ public class PuzzleManager : MonoBehaviour
 
             if (!mirrorActive)
             {
+                
+                waitingForMirrorGame = true;
+                mirrorPlayer = player;
                 activeMirror = interactable;
-                interactable.MirrorGameOn();
-                StartMirrorPuzzle();
-                candle1Object.SetActive(true);
-                candle2Object.SetActive(true);
+                string[] mirrirIntro =
+                {
+                    "This Mirror seems to distort what is shown",
+                    "Almost like it changes reality"
+                };
+
+                DialogueManager.Instance.StartDialogue(playerID, mirrirIntro, InteractableType.Mirror);
+                
+
+
+                return;
+               
                 
 
             }
@@ -211,17 +228,22 @@ public class PuzzleManager : MonoBehaviour
                 Debug.Log(MirrorGame.Instance);
                 MirrorGame.Instance.CheckHit();
             }
-                return;
+                
+
+            
+            return;
         }
+
+
 
         // NOTHING USEFUL
         Debug.Log("You interact, but nothing happens.");
     }
 
-    public void StartMirrorPuzzle()
+    public void StartMirrorPuzzle(PlayerInteraction player)
     {
         mirrorActive = true;
-        MirrorGame.Instance.StartMirrorTimer();
+        MirrorGame.Instance.StartMirrorTimer(player);
         Debug.Log("The mirror puzzle is now active. Player 2 can interact with the mirror.");
         minigameVisual.SetActive(true);
        
@@ -268,5 +290,21 @@ public class PuzzleManager : MonoBehaviour
             torch.MarkUnActivated();
             torch.SetUnlit();
         }
+    }
+
+    public bool IsWaitingForMirrorGameOn()
+    {
+        return waitingForMirrorGame;
+    }
+
+    public void BeginMirrorAfterDialogue()
+    {
+        waitingForMirrorGame = false;
+
+        activeMirror.MirrorGameOn();
+        StartMirrorPuzzle(mirrorPlayer);
+
+        candle1Object.SetActive(true);
+        candle2Object.SetActive(true);
     }
 }

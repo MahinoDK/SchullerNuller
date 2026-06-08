@@ -16,6 +16,9 @@ public class AltarRitualZone : MonoBehaviour
 
     [SerializeField] private Transform progressFill;
 
+    public GameObject portalSpawnPoint;
+    public GameObject finishPortal;
+
     private bool ritualCompleted = false;
     public void Awake()
     {
@@ -152,6 +155,8 @@ public class AltarRitualZone : MonoBehaviour
         }
         enemySpawner.StopAndResetSpawning();
         ritualCompleted = true;
+
+        Instantiate(finishPortal, portalSpawnPoint.transform.position, Quaternion.identity);
         // instantiate portal to win game here
 
     }

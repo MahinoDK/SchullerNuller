@@ -73,7 +73,7 @@ PrefabInstance:
       addedObject: {fileID: 931335988263230172}
     - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 68108c701a4e82a448cfa7103adb4413, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6726850918060994867}
+      addedObject: {fileID: 9071304574971998815}
   m_SourcePrefab: {fileID: -8435245712485981826, guid: 68108c701a4e82a448cfa7103adb4413, type: 3}
 --- !u!95 &211258168892541475 stripped
 Animator:
@@ -99,8 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GhostMovement
   moveSpeed: 1.5
   anim: {fileID: 211258168892541475}
---- !u!61 &6726850918060994867
-BoxCollider2D:
+--- !u!58 &9071304574971998815
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -133,15 +133,5 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.39, y: 0.7233763}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: -0.06349206}
-    oldSize: {x: 1.6875, y: 1.96875}
-    newSize: {x: 1.6875, y: 1.96875}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.42273903, y: 0.10172272}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0, y: 1.109375}
+  m_Radius: 1.3

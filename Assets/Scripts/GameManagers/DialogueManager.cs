@@ -177,6 +177,10 @@ public class DialogueManager : MonoBehaviour
             {
                 HideDialogue(2);
                 player2DialogueOpen = false;
+                if (PuzzleManager.Instance.IsWaitingForMirrorGameOn())
+                {
+                    PuzzleManager.Instance.BeginMirrorAfterDialogue();
+                }
                 return;
             }
 
