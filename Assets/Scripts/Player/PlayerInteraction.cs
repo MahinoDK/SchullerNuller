@@ -108,8 +108,8 @@ public class PlayerInteraction : MonoBehaviour
 
         if (nearbyInteractables.Count == 0) return;
 
-        //interact with the first nearby interactable, -> can expand this later to choose which one to interact with if there are multiple
-        nearbyInteractables[0].Interact(this);        //we send the player interaction script as a parameter, so the interactable can access the player's held item if needed, and other info about the player
+
+        nearbyInteractables[0].Interact(this);  //we send the player interaction script as a parameter, so the interactable can access the player's held item if needed, and other info about the player
         //nearbyInteractables[0].SendMessage("OnInteract", SendMessageOptions.DontRequireReceiver);
     }
 

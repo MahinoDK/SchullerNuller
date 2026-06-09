@@ -12,6 +12,11 @@ public class TableBookInteraction : MonoBehaviour, IInteractable
 
     public void Interact(PlayerInteraction player)
     {
+
+        if (player.GetHeldItem() != null)
+        {
+            return;
+        }
         Debug.Log("Book interaction triggered");
 
         int playerID = player.GetComponent<PlayerMovement>().playerID;
