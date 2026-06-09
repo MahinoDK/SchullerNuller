@@ -8,7 +8,11 @@ public class DialogueInteractable : MonoBehaviour, IInteractable
     public InteractableType interactableType;
     public void Interact(PlayerInteraction player)
     {
-
+        Debug.Log("held item:" ,player.GetHeldItem());
+        if(player.GetHeldItem() != null)
+        {
+            return;
+        }
         if (interactableType == InteractableType.Brunhilde)
         {
             AudioManager.instance.Play("QueenPainting");
